@@ -1,0 +1,81 @@
+{
+  "trip": "winter-2027",
+  "researched": "2026-11-26",
+  "note": "All money in USD for both travellers combined. Ranges are [low, high]. Flights are round trips. hotel and daily are per night/day; package covers packageNights of lodging and food. Scores are 1 (worst) to 5 (best) for January/February. leadDays = days before departure the slower passport's paperwork should start.",
+  "destinations": [
+    {
+      "id": "germany", "name": "Germany", "color": "#3b4a63",
+      "flightUS": [650, 900], "flightNG": [1250, 1400], "hotel": [110, 170], "daily": [150, 200],
+      "extras": [0, 0], "package": null, "visa": [100, 200],
+      "scores": { "weather": 1, "visa": 1, "travel": 4, "variety": 4 },
+      "leadDays": 70, "leadWhy": "Schengen visa for the Nigerian passport: appointment wait plus about 15 days processing",
+      "events": [
+        { "from": "2027-02-04", "to": "2027-02-09", "kind": "good", "text": "Carnival in Cologne, Dusseldorf and Mainz (Rose Monday 8 Feb)" }
+      ],
+      "flags": ["Hardest visa of the group for the Nigerian passport"]
+    },
+    {
+      "id": "barbados", "name": "Barbados", "color": "#0f7f86",
+      "flightUS": [450, 900], "flightNG": null, "hotel": [250, 400], "daily": [200, 300],
+      "extras": [0, 0], "package": null, "visa": [0, 0],
+      "scores": { "weather": 5, "visa": 5, "travel": 3, "variety": 2 },
+      "leadDays": 3, "leadWhy": "Online arrival form within 72 hours of departure",
+      "events": [
+        { "from": "2027-02-13", "to": "2027-02-21", "kind": "good", "text": "Holetown Festival (mid-February, dates to confirm)" }
+      ],
+      "flags": ["Air Peace fare not published (not in the total)", "Air Peace flies once or twice a month; a 14-night stay may not fit"]
+    },
+    {
+      "id": "japan", "name": "Japan", "color": "#b5363a",
+      "flightUS": [1100, 1650], "flightNG": [1500, 2500], "hotel": [80, 150], "daily": [150, 200],
+      "extras": [0, 0], "package": null, "visa": [25, 60],
+      "scores": { "weather": 3, "visa": 2, "travel": 1, "variety": 5 },
+      "leadDays": 30, "leadWhy": "Japan visa for the Nigerian passport: documents plus 12 to 14 working days at VFS",
+      "events": [
+        { "from": "2027-02-04", "to": "2027-02-11", "kind": "good", "text": "Sapporo Snow Festival (early February)" },
+        { "from": "2027-02-04", "to": "2027-02-10", "kind": "warn", "text": "Lunar New Year week: busier and pricier in Tokyo and Kyoto" }
+      ],
+      "flags": []
+    },
+    {
+      "id": "thailand", "name": "Thailand", "color": "#7e57c2",
+      "flightUS": [1000, 1350], "flightNG": [1250, 1550], "hotel": [50, 120], "daily": [80, 150],
+      "extras": [200, 400], "package": null, "visa": [30, 30],
+      "scores": { "weather": 5, "visa": 4, "travel": 2, "variety": 5 },
+      "leadDays": 14, "leadWhy": "Thai e-visa for the Nigerian passport: 3 to 7 business days, apply two weeks ahead",
+      "events": [
+        { "from": "2027-02-05", "to": "2027-02-08", "kind": "warn", "text": "Chinese New Year: Bangkok's Chinatown packed (fun, but book ahead)" }
+      ],
+      "flags": []
+    },
+    {
+      "id": "vietnam", "name": "Vietnam", "color": "#a8326e",
+      "flightUS": [900, 1450], "flightNG": [1100, 1950], "hotel": [40, 100], "daily": [70, 130],
+      "extras": [400, 800], "package": null, "visa": [50, 50],
+      "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 5 },
+      "leadDays": 10, "leadWhy": "Vietnam e-visa for both passports: 3 to 5 working days",
+      "events": [
+        { "from": "2027-02-01", "to": "2027-02-14", "kind": "bad", "text": "Tet (Lunar New Year, about 6 Feb): closures and sold-out transport" }
+      ],
+      "flags": []
+    },
+    {
+      "id": "kenya", "name": "Kenya", "color": "#407832",
+      "flightUS": [1200, 1800], "flightNG": [600, 1000], "hotel": [110, 190], "daily": [85, 160],
+      "extras": [0, 0], "package": { "nights": 5, "cost": [2700, 5200], "what": "5-night safari, lodging and meals included" }, "visa": [30, 30],
+      "scores": { "weather": 4, "visa": 4, "travel": 3, "variety": 4 },
+      "leadDays": 7, "leadWhy": "Kenya eTA for the US passport (the Nigerian passport needs none)",
+      "events": [],
+      "flags": ["Safari is most of the cost"]
+    },
+    {
+      "id": "srilanka", "name": "Sri Lanka", "color": "#a15c1d",
+      "flightUS": [1300, 1900], "flightNG": [1000, 1800], "hotel": [50, 90], "daily": [70, 130],
+      "extras": [0, 0], "package": null, "visa": [50, 100],
+      "scores": { "weather": 5, "visa": 3, "travel": 2, "variety": 4 },
+      "leadDays": 7, "leadWhy": "Online ETA for both; confirm the Nigerian rule first",
+      "events": [],
+      "flags": ["Nigerian entry rule unconfirmed"]
+    }
+  ]
+}

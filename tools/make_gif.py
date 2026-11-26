@@ -11,7 +11,7 @@ OK, WARN, BAD = (31, 122, 67), (196, 124, 0), (179, 38, 30)
 # name, low, high, colour, US status, NG status, note
 DATA = [
     ("Sri Lanka", 4000, 6900, (161, 92, 29), WARN, WARN, "ETA both; NG rule unconfirmed"),
-    ("Thailand", 4100, 7400, (126, 87, 194), OK, WARN, "NG e-visa ~1 week"),
+    ("Thailand", 4300, 7100, (126, 87, 194), OK, WARN, "NG e-visa ~1 week"),
     ("Vietnam", 4000, 7500, (168, 50, 110), WARN, WARN, "same e-visa both; avoid Tet ~6 Feb"),
     ("Germany", 5600, 7700, (59, 74, 99), OK, BAD, "NG Schengen visa, long wait"),
     ("Japan", 5800, 9100, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),

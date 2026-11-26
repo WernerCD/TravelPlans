@@ -29,6 +29,15 @@ def check_page(f):
         if rel.endswith("/") or not rel: continue
         if not (SITE / rel).exists(): errors.append(f"{name}: links missing file {ref}")
 
+import json
+for j in SITE.rglob("*.json"):
+    try:
+        doc = json.loads(j.read_text(encoding="utf-8"))
+        for d in doc.get("destinations", []):
+            for k in ("id", "name", "color", "hotel", "daily", "scores", "leadDays"):
+                if k not in d: errors.append(f"{j.name}: {d.get('id', '?')} has no {k}")
+    except Exception as e: errors.append(f"{j.relative_to(SITE)}: bad JSON ({e})")
+
 pages = sorted(SITE.glob("*.html"))
 for need in ("index.html", "changes.html", "404.html"):
     if not (SITE / need).exists(): errors.append(f"{need}: missing")

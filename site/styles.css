@@ -76,6 +76,29 @@ tbody th { font-weight: 600; color: var(--muted); width: 170px; font-size: .85re
 .sources { font-size: .82rem; color: var(--muted); }
 .sources a { color: inherit; }
 
+/* Trip picker */
+.picker { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: grid; gap: 16px; }
+.pick-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 20px; align-items: start; }
+.pick-form fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; min-width: 0; }
+.pick-form legend { font-weight: 600; font-size: .85rem; margin-bottom: 4px; }
+.field { display: grid; gap: 4px; font-size: .85rem; }
+.field input, .field select { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); min-height: 34px; }
+.weight { display: grid; grid-template-columns: 1fr 110px 16px; align-items: center; gap: 8px; font-size: .85rem; }
+input[type="range"] { accent-color: var(--accent); width: 100%; }
+.pick-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn { font: inherit; font-size: .85rem; padding: 6px 12px; min-height: 32px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+.pick-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.pick { border: 1px solid var(--line); border-left: 4px solid var(--dest, var(--accent)); border-radius: 8px; padding: 10px 14px; display: grid; gap: 6px; background: var(--bg); }
+.pick-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.pick-rank { font-family: var(--display); font-weight: 700; color: var(--muted); min-width: 1.2em; }
+.pick-name { font-family: var(--display); font-size: 1.05rem; }
+.pick-total { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; }
+.pick-bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.pick-bar span { display: block; height: 100%; background: var(--dest, var(--accent)); border-radius: 3px; transition: width .25s ease; }
+.pick-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pick-meta .chip { white-space: normal; }
+
 /* Change log */
 .change-day { display: grid; gap: 8px; }
 .change-day ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }

@@ -50,7 +50,7 @@
     <h2>The short version</h2>
     <ul>
       <li><b>Japan is the strongest pick for two weeks.</b> Most to do, low daily costs, and winter suits it. The Nigerian passport needs a visa: apply in December for a February trip.</li>
-      <li><b>Thailand is the best alternative.</b> Online visa in about a week, the lowest costs, and its best weather.</li>
+      <li><b>Thailand is the best alternative.</b> No visa for the US passport, an online e-visa in about a week for the Nigerian one, low costs, and its best weather of the year. <a href="#thailand">Full plan below.</a></li>
       <li><b>Vietnam is the other easy one:</b> the same $25 online e-visa for both passports, low costs, and a north-to-south route that fills two weeks. Go in mid to late January or after mid-February to miss Tet (around 6 Feb 2027).</li>
       <li><b>Barbados is the easiest on visas</b> (none for either passport) but the most expensive, and its only practical flight from Nigeria runs once or twice a month.</li>
       <li><b>Germany is the cheapest of the first three</b>, but the Schengen visa wait makes January unrealistic for the Nigerian passport.</li>
@@ -62,8 +62,38 @@
     <p class="small">The St. Louis traveller holds a <b>US passport</b>; the Port Harcourt traveller holds a <b>Nigerian passport</b>. Both meet at the destination. Costs are for one 14-night trip, both people combined, one mid-range room. If either passport is different, the visa rows change.</p>
   </section>
 
+  <section class="stack" id="pick">
+    <h2>Pick for us</h2>
+    <p class="small">Set your dates, length and hotel level, then say what matters most. The list re-ranks itself, works out the cost for two, tells you when the slower passport's paperwork has to start, and flags festivals or holidays inside your dates. Paperwork that can't finish in time, or a shutdown holiday like Tet, pulls a place down the list. Japan rises when "Lots to do" matters more than easy visas and short flights. Your settings stay in this browser.</p>
+    <p id="pickFallback" class="small">Loading the trip picker...</p>
+    <div id="picker" class="picker" data-trip="winter-2027" hidden>
+      <form id="pickForm" class="pick-form">
+        <fieldset>
+          <legend>Your trip</legend>
+          <label class="field" for="pStart">First night<input type="date" id="pStart" min="2027-01-01" max="2027-03-31"></label>
+          <label class="field" for="pNights">Nights: <output id="pNightsOut">14</output><input type="range" id="pNights" min="7" max="21" step="1"></label>
+          <label class="field" for="pTier">Hotels
+            <select id="pTier">
+              <option value="budget">Budget (about 60% of mid-range)</option>
+              <option value="mid">Mid-range</option>
+              <option value="upscale">Upscale (about 2x mid-range)</option>
+            </select></label>
+        </fieldset>
+        <fieldset id="pWeights">
+          <legend>What matters (0 = ignore, 5 = most)</legend>
+        </fieldset>
+      </form>
+      <div class="pick-actions">
+        <span class="small">Ranking for <b id="pickDates"></b></span>
+        <button type="button" class="btn" id="pReset">Reset</button>
+      </div>
+      <ol id="pickResults" class="pick-list" aria-live="polite"></ol>
+      <p class="small">Totals cover both travellers: round-trip flights from St. Louis and Port Harcourt, hotel, food and local transport, domestic legs, and visa fees. Estimates from the research below, not quotes.</p>
+    </div>
+  </section>
+
   <figure class="figure">
-    <img src="winter-trip-costs.gif" width="1000" height="684" alt="Animated bar chart of rough 14-night totals for two people: Sri Lanka $4,000 to $6,900, Thailand $4,100 to $7,400, Vietnam $4,000 to $7,500, Germany $5,600 to $7,700, Japan $5,800 to $9,100, Barbados $6,750 to $10,700 plus the Air Peace fare, Kenya $6,300 to $11,200.">
+    <img src="winter-trip-costs.gif" width="1000" height="684" alt="Animated bar chart of rough 14-night totals for two people: Sri Lanka $4,000 to $6,900, Thailand $4,300 to $7,100, Vietnam $4,000 to $7,500, Germany $5,600 to $7,700, Japan $5,800 to $9,100, Barbados $6,750 to $10,700 plus the Air Peace fare, Kenya $6,300 to $11,200.">
     <figcaption class="small">The seven main options, cheapest first. Dots show visa status for the US and Nigerian passports.</figcaption>
   </figure>
 
@@ -145,7 +175,7 @@
           <td><span class="chip g">No visa</span> Kenya dropped the eTA for most Africans in 2025. Rwanda is visa-free for Africans (verify).</td>
           <td><span class="chip w">ETA</span> Online, but one source says a full visa is needed. Verify first.</td></tr>
         <tr><th>Getting there</th>
-          <td>PHC via Doha, Dubai or Addis. STL one or two stops.</td>
+          <td>PHC to Lagos, then Qatar via Doha (about $1,250 to $1,550). STL about $1,000 to $1,350.</td>
           <td>PHC to Lagos, then Qatar, Emirates or Ethiopian (about $1,000 to $1,800). STL about $900 to $1,450.</td>
           <td>Kenya Airways flies Lagos to Nairobi nonstop. STL two stops.</td>
           <td>PHC via Doha or Dubai. STL two stops.</td></tr>
@@ -155,17 +185,77 @@
           <td>Dry season, ideal for safari.</td>
           <td>Best season for the south and west coasts and the hill country.</td></tr>
         <tr><th>Two weeks</th>
-          <td>Bangkok, Chiang Mai, then Krabi or Koh Samui</td>
+          <td>Bangkok, Chiang Mai, Krabi and Koh Lanta (<a href="#thailand">route below</a>)</td>
           <td>Hanoi, Ha Long Bay, Hue, Hoi An, Ho Chi Minh City, Phu Quoc (<a href="#vietnam">route below</a>)</td>
           <td>5-night Masai Mara safari, then Diani Beach. Rwanda gorilla permits: $1,500 a person.</td>
           <td>Colombo, Sigiriya, Kandy, the tea-country train, Galle and the beaches</td></tr>
         <tr><th>Rough total for 2</th>
-          <td><b>$4,100 to $7,400</b> <span class="chip g">Low</span></td>
+          <td><b>$4,300 to $7,100</b> <span class="chip g">Low</span></td>
           <td><b>$4,000 to $7,500</b> <span class="chip g">Low</span></td>
           <td><b>$6,300 to $11,200</b>, mostly the safari</td>
           <td><b>$4,000 to $6,900</b> <span class="chip g">Low</span></td></tr>
       </tbody>
     </table>
+    </div>
+  </section>
+
+  <section class="stack" id="thailand">
+    <h2 class="c-th">Thailand in detail</h2>
+    <p>January and February are Thailand's best months: dry, sunny, and cooler in the north. Use the Andaman coast (Krabi, Koh Lanta) for beaches; it is the drier side in January.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Two-week route</h3>
+        <ul class="small">
+          <li><b>Bangkok, 3 nights.</b> Grand Palace and Wat Pho, a long-tail boat on the canals, Chinatown street food, a rooftop bar.</li>
+          <li><b>Chiang Mai, 4 nights.</b> Old-city temples, a cooking class, an ethical elephant sanctuary, Doi Inthanon (cool, bring a jacket), a day trip to the White Temple in Chiang Rai. One-hour flight from Bangkok.</li>
+          <li><b>Krabi and Railay, 4 nights.</b> Limestone cliffs, kayaking, the four-islands boat trip. Fly Chiang Mai to Krabi.</li>
+          <li><b>Koh Lanta, 3 nights.</b> Quiet beaches to finish; ferry from Krabi, then fly home from Krabi via Bangkok.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Costs for 2, 14 nights</h3>
+        <ul class="small">
+          <li>Flights: St. Louis about $1,000 to $1,350; Port Harcourt via Lagos and Doha about $1,250 to $1,550.</li>
+          <li>Hotels: $50 to $120 a night, <b>$700 to $1,680</b>.</li>
+          <li>Food, local transport, sights: $80 to $150 a day, <b>$1,120 to $2,100</b>.</li>
+          <li>Two domestic flights and ferries: about <b>$200 to $400</b>.</li>
+          <li>Nigerian e-visa: about $30. US passport: free.</li>
+          <li><b>Total: about $4,300 to $7,100.</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Timing and tips</h3>
+        <ul class="small">
+          <li>Both travellers fill in the free <b>Thailand Digital Arrival Card</b> online within 72 hours before landing.</li>
+          <li>US passport: 30 days visa-free. Nigerian passport: 60-day e-visa from the official portal, 3 to 7 business days; apply two weeks ahead.</li>
+          <li>No tourist entry fee yet. A 300 to 450 baht fee keeps being proposed, possibly for 2027; budget about $15 each just in case.</li>
+          <li>Chinese New Year (around 6 Feb 2027) fills Bangkok's Chinatown: great to see, book rooms early.</li>
+          <li>Temples need covered shoulders and knees. Grab works for taxis.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" id="twin">
+    <h2>Twin-centre ideas</h2>
+    <p class="small">Two countries in one trip, chosen so neither passport picks up a hard visa. Totals are rough, for 2 people, 14 nights.</p>
+    <div class="cards">
+      <div class="card">
+        <h3><span class="c-th">Thailand</span> + <span class="c-vn">Vietnam</span></h3>
+        <p class="small">7 nights each: Bangkok and Chiang Mai, then a 2-hour flight to Hanoi, Ha Long Bay and Hoi An. Both are online visas. Fly into Bangkok and home from Da Nang or Ho Chi Minh City. About <b>$4,500 to $7,800</b>. Avoid Vietnam during Tet (around 6 Feb).</p>
+      </div>
+      <div class="card">
+        <h3><span class="c-lk">Sri Lanka</span> + Maldives</h3>
+        <p class="small">10 nights in Sri Lanka, then 4 on a Maldives island, an hour's flight away. The Maldives gives every nationality a free 30-day visa on arrival, and January to March is its dry season. Resorts are pricey: about <b>$6,500 to $11,000</b>.</p>
+      </div>
+      <div class="card">
+        <h3><span class="c-ke">Kenya</span> safari + the coast</h3>
+        <p class="small">Already the plan above, but for more variety add Lamu island (old Swahili town, dhow trips) for 3 nights instead of more Diani. Still no visa for the Nigerian passport and an eTA for the US one.</p>
+      </div>
+      <div class="card">
+        <h3><span class="c-jp">Japan</span> + <span class="c-th">Thailand</span></h3>
+        <p class="small">Snow and hot springs for 7 nights, then beaches for 7. Bangkok to Tokyo is about 6 hours. Only worth it if the Nigerian Japan visa is in hand; costs land near Japan alone, about <b>$5,500 to $8,800</b>.</p>
+      </div>
     </div>
   </section>
 
@@ -244,6 +334,20 @@
     </ul>
   </section>
 
+  <section class="note" id="checklist">
+    <strong>Booking checklist (whichever place wins)</strong>
+    <ul class="small">
+      <li><b>Pick by mid-December.</b> The "Pick for us" list shows the latest safe start for each country's paperwork; the Nigerian passport sets the pace everywhere except Barbados and Kenya.</li>
+      <li><b>Passports:</b> both valid at least 6 months past the return date, with two blank pages.</li>
+      <li><b>Flights:</b> book so both arrive the same day, ideally within a few hours; the earlier arrival checks in to the first hotel. Avoid connections through the US or UK for the Nigerian passport.</li>
+      <li><b>Insurance</b> that covers cancellations and missed connections, important if Air Peace or a visa delay is involved.</li>
+      <li><b>Yellow fever card</b> for the Nigerian traveller: required by Barbados for arrivals from Nigeria, recommended for Kenya, and often checked when leaving Nigeria.</li>
+      <li><b>Money:</b> a dollar or euro card for the Nigerian traveller (naira cards have low limits abroad), and a no-foreign-fee card for the US traveller.</li>
+      <li><b>Phones:</b> an eSIM for the destination for both, so maps and ride apps work on landing.</li>
+      <li><b>Arrival forms</b> online in the last 72 hours: Visit Japan Web, Thailand Digital Arrival Card, Barbados travel form, as needed.</li>
+    </ul>
+  </section>
+
   <section class="stack" id="links">
     <h2>Official links</h2>
     <div class="cards">
@@ -261,7 +365,8 @@
         <li><a href="https://www.vjw.digital.go.jp/">Visit Japan Web (arrival form)</a></li></ul></div>
       <div class="card"><h3 class="c-th">Thailand</h3><ul class="small">
         <li><a href="https://www.tourismthailand.org/">Tourism Authority of Thailand</a></li>
-        <li><a href="https://www.thaievisa.go.th/">Thai e-visa (official)</a></li></ul></div>
+        <li><a href="https://www.thaievisa.go.th/">Thai e-visa (official)</a></li>
+        <li><a href="https://tdac.immigration.go.th/">Thailand Digital Arrival Card (official)</a></li></ul></div>
       <div class="card"><h3 class="c-vn">Vietnam</h3><ul class="small">
         <li><a href="https://vietnam.travel/">Vietnam tourism board</a></li>
         <li><a href="https://evisa.gov.vn/">Vietnam e-visa (official portal)</a></li></ul></div>
@@ -284,6 +389,7 @@
     US and UK rules: <a href="https://guardian.ng/nigerian/are-nigerians-allowed-to-travel-to-the-usa/">The Guardian Nigeria</a>, <a href="https://thesun.ng/uk-unveils-new-visa-transit-rules-for-nigeria-11-others/">The Sun Nigeria</a> ·
     Fares: <a href="https://www.lufthansa.com/lhg/ng/en/o-d/cy-cy/port-harcourt-frankfurt">Lufthansa</a>, <a href="https://www.jal.co.jp/flights/en-us/flights-from-saint-louis-1-to-tokyo">JAL</a>, <a href="https://www.ratepunk.com/flights-from-to/STL/FRA/cheap-flights-from-st-louis-to-frankfurt">Ratepunk</a>, <a href="https://www.farecompare.com/flights/St_Louis-STL/Barbados-BGI/market.html">FareCompare</a> ·
     Alternatives: <a href="https://www.cliffedekkerhofmeyr.com/en/news/publications/2025/Sectors/Immigration-Law/immigration-law-alert-24-july-kenya-Kenya-amends-immigration-rules-broadens-eTA-exemptions-for-African-and-other-nationals">Kenya eTA (CDH)</a>, <a href="https://visamanager.io/nationalities/thailand-visa-for-nigerians">Thailand for Nigerians</a>, <a href="https://www.legit.ng/world/1731044-thailand-ends-60-day-visa-exemption-2026-what-travellers/">Thailand 30-day rule</a>, <a href="https://visa-rules.com/visa/ng/ae/">UAE for Nigerians</a> ·
+    Thailand: <a href="https://www.aa.com/en-us/flights-from-st-louis-to-bangkok">STL fares</a>, <a href="https://www.swiss.com/lhg/us/en/o-d/cy-cy/saint-louis-bangkok">Swiss STL-BKK</a>, <a href="https://www.expedia.com/lp/flights/los/bkk/lagos-to-bangkok">Lagos fares</a>, <a href="https://www.kayak.com/flight-routes/Lagos-Murtala-Muhammed-LOS/Bangkok-Suvarnabhumi-BKK">Kayak Lagos-Bangkok</a>, <a href="https://thethaiger.com/guides/visa-information/everything-you-need-to-enter-thailand-in-2024">entry rules</a>, <a href="https://blog.wego.com/thailand-tourist-entry-fee-2026/">entry fee status</a>, <a href="https://e.vnexpress.net/news/travel/thailand-plans-13-tourist-entry-fee-starting-2027-5110869.html">2027 fee plan</a>, <a href="https://www.roughguides.com/thailand/when-to-go/january">January weather</a>, <a href="https://thaiest.com/thailand/weather/month/january">coasts in January</a> ·
     Vietnam: <a href="https://en.wikipedia.org/wiki/Visa_policy_of_Vietnam">visa policy</a>, <a href="https://evisas.io/visa-requirements/ng/vn">for Nigerians</a>, <a href="https://hellosafe.com/visa/vietnam-evisa">e-visa for US</a>, <a href="https://www.skyscanner.com/routes/los/sgn/lagos-to-ho-chi-minh-city.html">Lagos fares</a>, <a href="https://www.aa.com/en-us/flights-from-st-louis-to-vietnam">STL fares</a>, <a href="https://www.roughguides.com/vietnam/when-to-go/january/">January weather</a>, <a href="https://www.vietnamtourism.com/en/budget">budget</a> ·
     More places: <a href="https://visa-rules.com/visa/ng/ie/">Ireland</a>, <a href="https://www.klook.com/en-US/blog/china-visa-free-us-citizens/">China</a>, <a href="https://www.flydestinations.com.ng/visa-requirement/morocco-evisa-requirements-nigerians-2026/">Morocco</a> ·
     Daily costs: <a href="https://hellosafe.ca/en/travel-insurance/budget-travel-ranking-countries">HelloSafe</a>, <a href="https://www.lonelyplanet.com/articles/accommodation-costs-and-info">Lonely Planet</a>
@@ -303,6 +409,7 @@
   </div>
 </footer>
 <script src="theme.js?v=dev"></script>
+<script src="planner.js?v=dev"></script>
 <script src="version.js?v=dev"></script>
 </body>
 </html>
