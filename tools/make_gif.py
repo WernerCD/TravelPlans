@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 OUT = Path(__file__).resolve().parents[1] / "site" / "winter-trip-costs.gif"
-W, H = 1000, 620
+W = 1000
 BG, FG, MUTED, GRID = (246, 247, 249), (27, 35, 48), (91, 102, 118), (221, 226, 234)
 OK, WARN, BAD = (31, 122, 67), (196, 124, 0), (179, 38, 30)
 
@@ -12,6 +12,7 @@ OK, WARN, BAD = (31, 122, 67), (196, 124, 0), (179, 38, 30)
 DATA = [
     ("Sri Lanka", 4000, 6900, (161, 92, 29), WARN, WARN, "ETA both; NG rule unconfirmed"),
     ("Thailand", 4100, 7400, (126, 87, 194), OK, WARN, "NG e-visa ~1 week"),
+    ("Vietnam", 4000, 7500, (168, 50, 110), WARN, WARN, "same e-visa both; avoid Tet ~6 Feb"),
     ("Germany", 5600, 7700, (59, 74, 99), OK, BAD, "NG Schengen visa, long wait"),
     ("Japan", 5800, 9100, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),
     ("Barbados", 6750, 10700, (15, 127, 134), OK, OK, "Air Peace fare extra; few flights"),
@@ -19,6 +20,7 @@ DATA = [
 ]
 XMAX = 12000
 L, R, TOP, ROW = 170, 70, 150, 64
+H = TOP + ROW * len(DATA) + 86  # 684 for seven rows
 
 
 def font(name, size):
