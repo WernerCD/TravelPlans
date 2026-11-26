@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check site
+        run: python tools/check_site.py
+      - name: Cache-bust asset links with the commit id
+        run: sed -i "s/?v=dev/?v=${GITHUB_SHA::8}/g" site/*.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      # GitHub sometimes answers "No artifacts named github-pages" right after the upload; try once more
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before retrying the deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
