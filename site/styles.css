@@ -67,6 +67,7 @@ tbody th { font-weight: 600; color: var(--muted); width: 170px; font-size: .85re
 .chip { display: inline-block; font-size: .75rem; font-weight: 600; padding: 1px 8px; border-radius: 99px; margin-right: 4px; white-space: nowrap; }
 .g { background: var(--chip-good); color: var(--good); } .w { background: var(--chip-warn); color: var(--warn); } .b { background: var(--chip-bad); color: var(--bad); }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.cards-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
 .card ul, .note ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
 .trip-card { text-decoration: none; color: inherit; }

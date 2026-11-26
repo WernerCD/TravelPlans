@@ -14,7 +14,7 @@ DATA = [
     ("Thailand", 4300, 7100, (126, 87, 194), OK, WARN, "NG e-visa ~1 week"),
     ("Vietnam", 4000, 7500, (168, 50, 110), WARN, WARN, "same e-visa both; avoid Tet ~6 Feb"),
     ("Germany", 5600, 7700, (59, 74, 99), OK, BAD, "NG Schengen visa, long wait"),
-    ("Japan", 5800, 9100, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),
+    ("Japan", 6400, 9900, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),
     ("Barbados", 6750, 10700, (15, 127, 134), OK, OK, "Air Peace fare extra; few flights"),
     ("Kenya", 6300, 11200, (64, 120, 50), WARN, OK, "safari is most of the cost"),
 ]

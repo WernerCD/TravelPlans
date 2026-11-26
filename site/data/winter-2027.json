@@ -27,12 +27,12 @@
     },
     {
       "id": "japan", "name": "Japan", "color": "#b5363a",
-      "flightUS": [1100, 1650], "flightNG": [1500, 2500], "hotel": [80, 150], "daily": [150, 200],
-      "extras": [0, 0], "package": null, "visa": [25, 60],
+      "flightUS": [1100, 1650], "flightNG": [1400, 1950], "hotel": [80, 150], "daily": [150, 200],
+      "extras": [700, 1300], "package": null, "visa": [25, 100],
       "scores": { "weather": 3, "visa": 2, "travel": 1, "variety": 5 },
       "leadDays": 30, "leadWhy": "Japan visa for the Nigerian passport: documents plus 12 to 14 working days at VFS",
       "events": [
-        { "from": "2027-02-04", "to": "2027-02-11", "kind": "good", "text": "Sapporo Snow Festival (early February)" },
+        { "from": "2027-02-04", "to": "2027-02-11", "kind": "good", "text": "Sapporo Snow Festival (4 to 11 Feb 2027)" },
         { "from": "2027-02-04", "to": "2027-02-10", "kind": "warn", "text": "Lunar New Year week: busier and pricier in Tokyo and Kyoto" }
       ],
       "flags": []
