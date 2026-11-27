@@ -1,7 +1,8 @@
-/* TravelPlans trip planner v2: ranks destinations from data/<trip>.json by the reader's own weights,
+/* TravelPlans trip planner v3: ranks destinations from data/<trip>.json by the reader's own weights,
    and works out cost for the chosen nights, the paperwork start date, and events that fall in the dates.
    Settings are remembered per browser under travel.planner.<trip>; a #s=... link carries them to someone else
-   (the link wins over saved settings). */
+   (the link wins over saved settings). Each result has a "Plan this trip" panel: itemised cost with each
+   traveller's share, dated steps, and an .ics calendar download. */
 (function () {
   var root = document.getElementById('picker');
   if (!root) return;
@@ -12,6 +13,7 @@
   var LABELS = { cost: 'Low cost', weather: 'Warm, dry weather', visa: 'Easy visas', travel: 'Short travel', variety: 'Lots to do' };
   var DAY = 86400000;
   var data = null;
+  var openId = null; // which result's "Plan this trip" panel is open, kept across re-ranks
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
   function save(s) {
@@ -35,7 +37,7 @@
 
   function utc(iso) { var p = iso.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }
   function fmt(t) { return new Date(t).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }); }
-  function money(n) { return '$' + (Math.round(n / 100) * 100).toLocaleString('en-US'); }
+  function money(n) { var step = n < 1000 ? 10 : 100; return '$' + (Math.round(n / step) * step).toLocaleString('en-US'); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
   function cost(d, nights, tier) {
@@ -46,6 +48,110 @@
     add(d.hotel, paid * m); add(d.daily, paid);
     if (d.package) add(d.package.cost, tier === 'budget' ? 0.8 : tier === 'upscale' ? 1.6 : 1);
     return [lo, hi];
+  }
+
+  // Itemised cost for the chosen nights and tier, plus each traveller's share.
+  // Flights belong to whoever flies them; everything else is split evenly (visa fees too, though the US passport often pays none).
+  function breakdown(d, nights, tier) {
+    var m = TIERS[tier] || 1, paid = d.package ? Math.max(0, nights - d.package.nights) : nights, rows = [];
+    function row(label, r, k, who) { if (r && (r[0] || r[1])) rows.push({ label: label, lo: r[0] * (k || 1), hi: r[1] * (k || 1), who: who || 'both' }); }
+    row('Flight from St. Louis (round trip)', d.flightUS, 1, 'us');
+    if (d.flightNG) row('Flight from Port Harcourt (round trip)', d.flightNG, 1, 'ng');
+    if (d.package) row(d.package.nights + '-night package (safari)', d.package.cost, tier === 'budget' ? 0.8 : tier === 'upscale' ? 1.6 : 1);
+    row('Hotel, ' + paid + ' nights', d.hotel, paid * m);
+    row('Food and local transport, ' + paid + ' days', d.daily, paid);
+    row('Trains, domestic flights, extras', d.extras);
+    row('Visas and entry fees', d.visa);
+    var us = [0, 0], ng = [0, 0];
+    rows.forEach(function (r) {
+      var f = r.who === 'both' ? 0.5 : 1;
+      if (r.who !== 'ng') { us[0] += r.lo * f; us[1] += r.hi * f; }
+      if (r.who !== 'us') { ng[0] += r.lo * f; ng[1] += r.hi * f; }
+    });
+    return { rows: rows, us: us, ng: ng };
+  }
+
+  // Dated steps for one destination. BOOK_DAYS is a rule of thumb for long-haul fares, labelled as such on the page.
+  var BOOK_DAYS = 60;
+  function steps(d, start, end, today) {
+    var out = [], applyBy = start - d.leadDays * DAY, book = start - BOOK_DAYS * DAY;
+    out.push({ t: Math.max(today, applyBy), title: (applyBy < today ? 'Start paperwork now (target date passed)' : 'Start paperwork') + ': ' + d.name, why: d.leadWhy });
+    out.push({ t: Math.max(today, book), title: 'Book flights' + (book < today ? ' now' : '') + ': ' + d.name,
+      why: (d.leadDays >= 14 ? 'Pick refundable fares, or book once the visa is approved. ' : '') +
+        'Rule of thumb: about ' + (BOOK_DAYS / 30) + ' months ahead for long-haul fares.' +
+        (d.flightNG ? '' : ' Check the Air Peace schedule first: it flies Lagos to Barbados only once or twice a month.') });
+    (d.events || []).forEach(function (ev) {
+      var a = utc(ev.from), b = utc(ev.to);
+      if (a < end && b >= start) out.push({ t: a, t2: b, title: ev.text, why: ev.kind === 'bad' ? 'Many places close and transport is packed.' : ev.kind === 'warn' ? 'Book early.' : 'Inside your dates.' });
+    });
+    out.push({ t: start, first: 1, title: 'Trip starts: ' + d.name, why: 'Both travellers meet at the destination.' });
+    out.push({ t: end, title: 'Trip ends: fly home', why: '' });
+    return out.sort(function (a, b) { return a.t - b.t || (b.first || 0) - (a.first || 0); });
+  }
+
+  function icsDate(t) { return new Date(t).toISOString().slice(0, 10).replace(/-/g, ''); }
+  function icsText(v) { return String(v).replace(/[\\;,]/g, function (c) { return '\\' + c; }).replace(/\n/g, '\\n'); }
+  function ics(d, list) {
+    var stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
+    var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//TravelPlans//Trip Planner//EN', 'CALSCALE:GREGORIAN'];
+    list.forEach(function (s, i) {
+      lines.push('BEGIN:VEVENT', 'UID:' + TRIP + '-' + d.id + '-' + i + '-' + icsDate(s.t) + '@wernercd.github.io', 'DTSTAMP:' + stamp,
+        'DTSTART;VALUE=DATE:' + icsDate(s.t), 'DTEND;VALUE=DATE:' + icsDate((s.t2 || s.t) + DAY),
+        'SUMMARY:' + icsText(s.title), 'DESCRIPTION:' + icsText((s.why ? s.why + ' ' : '') + location.href.split('#')[0] + toHash(state)), 'END:VEVENT');
+    });
+    lines.push('END:VCALENDAR');
+    // RFC 5545: fold lines longer than 75 characters (continuation lines start with a space)
+    return lines.map(function (l) {
+      var o = l.slice(0, 75);
+      for (var i = 75; i < l.length; i += 74) o += '\r\n ' + l.slice(i, i + 74);
+      return o;
+    }).join('\r\n') + '\r\n';
+  }
+
+  function panel(d, start, end, today) {
+    var det = el('details', 'pick-more');
+    det.open = openId === d.id;
+    det.addEventListener('toggle', function () { if (det.open) openId = d.id; else if (openId === d.id) openId = null; });
+    det.appendChild(el('summary', null, 'Plan this trip'));
+    var body = el('div', 'pick-plan');
+    var b = breakdown(d, state.nights, state.tier);
+    var tw = el('div', 'tablewrap'), tb = el('table', 'mini'), tbody = el('tbody');
+    tb.appendChild(el('caption', 'small', 'Cost for both travellers (estimates)'));
+    function range(lo, hi) { return money(lo) === money(hi) ? money(lo) : money(lo) + ' to ' + money(hi); }
+    function line(label, val, who) {
+      var tr = el('tr'); tr.appendChild(el('th', null, label)); tr.appendChild(el('td', null, val)); tr.appendChild(el('td', 'small', who)); tbody.appendChild(tr);
+    }
+    b.rows.forEach(function (r) {
+      line(r.label, range(r.lo, r.hi), r.who === 'us' ? 'St. Louis traveller' : r.who === 'ng' ? 'Port Harcourt traveller' : 'shared');
+    });
+    if (!d.flightNG) line('Flight from Port Harcourt (Air Peace)', 'fare not published', 'Port Harcourt traveller');
+    tb.appendChild(tbody); tw.appendChild(tb); body.appendChild(tw);
+    var share = el('p', 'pick-share');
+    share.appendChild(el('span', null, 'St. Louis traveller: ')); share.appendChild(el('b', null, money(b.us[0]) + ' to ' + money(b.us[1])));
+    share.appendChild(el('span', null, ' · Port Harcourt traveller: ')); share.appendChild(el('b', null, money(b.ng[0]) + ' to ' + money(b.ng[1]) + (d.flightNG ? '' : ' + Air Peace')));
+    body.appendChild(share);
+    body.appendChild(el('p', 'small', 'Each pays their own flight; everything else is split evenly.'));
+    var list = steps(d, start, end, today), ol = el('ol', 'pick-steps');
+    list.forEach(function (s) {
+      var li = el('li'); li.appendChild(el('time', null, fmt(s.t) + (s.t2 && s.t2 !== s.t ? ' to ' + fmt(s.t2) : '')));
+      var txt = el('div'); txt.appendChild(el('strong', null, s.title)); if (s.why) txt.appendChild(el('span', 'small', s.why));
+      li.appendChild(txt); ol.appendChild(li);
+    });
+    body.appendChild(el('h3', 'pick-sub', 'Steps and dates'));
+    body.appendChild(ol);
+    var acts = el('div', 'pick-actions');
+    var cal = el('button', 'btn', 'Add these dates to my calendar (.ics)'); cal.type = 'button';
+    cal.addEventListener('click', function () {
+      var blob = new Blob([ics(d, list)], { type: 'text/calendar' }), a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = TRIP + '-' + d.id + '.ics';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    });
+    acts.appendChild(cal);
+    if (d.more) { var more = el('a', null, 'Full ' + d.name + ' plan'); more.href = d.more; acts.appendChild(more); }
+    body.appendChild(acts);
+    det.appendChild(body);
+    return det;
   }
 
   function render() {
@@ -94,6 +200,7 @@
       });
       (d.flags || []).forEach(function (f) { meta.appendChild(el('span', 'chip w', f)); });
       li.appendChild(meta);
+      li.appendChild(panel(d, start, end, today));
       list.appendChild(li);
     });
     document.getElementById('pickDates').textContent = fmt(start) + ' to ' + fmt(end) + ', ' + new Date(end).getUTCFullYear();

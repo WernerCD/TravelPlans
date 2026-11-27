@@ -101,6 +101,29 @@ a.btn { display: inline-flex; align-items: center; text-decoration: none; }
 .pick-bar span { display: block; height: 100%; background: var(--dest, var(--accent)); border-radius: 3px; transition: width .25s ease; }
 .pick-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .pick-meta .chip { white-space: normal; }
+.pick-more summary { cursor: pointer; font-weight: 600; font-size: .85rem; color: var(--accent); min-height: 28px; display: inline-flex; align-items: center; }
+.pick-more summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.pick-plan { display: grid; gap: 10px; padding-top: 8px; }
+table.mini { min-width: 0; font-size: .85rem; }
+table.mini caption { text-align: left; padding: 8px 12px 0; }
+table.mini th, table.mini td { padding: 6px 12px; }
+table.mini tbody th { width: auto; }
+.pick-share { font-size: .9rem; }
+.pick-sub { font-size: 1rem; }
+.pick-steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.pick-steps li { display: grid; grid-template-columns: 7.5em 1fr; gap: 10px; align-items: baseline; }
+.pick-steps time { font-variant-numeric: tabular-nums; font-weight: 600; font-size: .85rem; color: var(--dest, var(--accent)); }
+.pick-steps li div { display: grid; gap: 2px; }
+@media (max-width: 420px) { .pick-steps li { grid-template-columns: 1fr; gap: 2px; } }
+@media (max-width: 560px) {
+  /* Phones: label on its own line, amount and who-pays side by side under it */
+  table.mini tr { display: grid; grid-template-columns: 1fr auto; border-bottom: 1px solid var(--line); }
+  table.mini tr:last-child { border-bottom: 0; }
+  table.mini th, table.mini td { border-bottom: 0; }
+  table.mini tbody th { grid-column: 1 / -1; padding-bottom: 0; }
+  table.mini td { white-space: nowrap; }
+  table.mini td.small { text-align: right; white-space: normal; }
+}
 
 /* Change log */
 .change-day { display: grid; gap: 8px; }
@@ -115,7 +138,7 @@ a.btn { display: inline-flex; align-items: center; text-decoration: none; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 @media print {
-  .hub-bar, .icon-btn, .site-footer .foot-links { display: none; }
+  .hub-bar, .icon-btn, .site-footer .foot-links, .pick-form, .btn { display: none; }
   .tablewrap { overflow: visible; border: 0; }
   table { min-width: 0; }
   body { background: #fff; color: #000; }
