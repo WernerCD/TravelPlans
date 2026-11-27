@@ -5,7 +5,7 @@ Trip research and comparisons, published at **https://wernercd.github.io/TravelP
 ## Features
 - A home page listing each trip being planned.
 - **Winter 2027** (`winter-2027.html`): a two-week January/February trip for one US and one Nigerian passport. Germany, Barbados and Japan compared on visas, flights, hotels, daily costs and weather; alternatives (Thailand, Kenya, Sri Lanka, Vietnam and more); Air Peace and safe connections; official links; an animated cost chart.
-- **Trip Planner** (`planner.html` + `planner.js` + `data/winter-2027.json`): set dates, nights, hotel level and weights; destinations re-rank with costs for two, the latest safe date to start visas, and events inside the dates. Settings stay in the browser (`travel.planner.<trip>`); Copy link puts them in a `#s=start,nights,tier,weights` link that overrides saved settings. Each destination's `more` field is the link to its full plan. Every result has a **Plan this trip** panel: itemised cost with each traveller's share, dated steps (paperwork from `leadDays`, flights at a 60-day rule of thumb, events, trip dates) and an .ics download built in the browser. The JSON is the one place to change a destination's numbers.
+- **Trip Planner** (`planner.html` + `planner.js` + `data/winter-2027.json`): set dates, nights, hotel level and weights; destinations re-rank with costs for two, the latest safe date to start visas, and events inside the dates. Settings stay in the browser (`travel.planner.<trip>`); Copy link puts them in a `#s=start,nights,tier,weights` link that overrides saved settings. Each destination's `more` field is the link to its full plan. Every result has a **Plan this trip** panel: itemised cost with each traveller's share, dated steps (paperwork from `leadDays`, flights at a 60-day rule of thumb, events, trip dates) and an .ics download built in the browser. The JSON is the one place to change a destination's numbers; after changing it, update the copies `check_site.py` lists (and re-run `tools/make_gif.py`), or the deploy stops.
 - Light and dark themes (key `travel.theme`), update notice for long-open tabs, print-friendly pages.
 
 ## Data and copyright
@@ -21,7 +21,8 @@ site/            the published site (GitHub Pages serves this folder)
   404.html
   styles.css, theme.js, version.js, icon.svg, og.png, winter-trip-costs.gif
 tools/
-  check_site.py  page check run by CI before every deploy
+  check_site.py  page check run by CI before every deploy; also fails if any copied cost figure
+                 (tables, route totals, flight lines, chart alt text, make_gif.py) drifts from the trip JSON
   make_gif.py    renders winter-trip-costs.gif and og.png (needs Pillow)
 .github/workflows/pages.yml
 ```
