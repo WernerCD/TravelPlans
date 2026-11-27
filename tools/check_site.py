@@ -5,6 +5,7 @@ CI runs it before every deploy, so a broken page never goes live:
 Checks every site/*.html page: <html lang>, one <h1>, a <title>, the header bar, footer and theme script;
 non-404 pages also need a description, og:title, theme-color and the update notice; every local src/href exists.
 Every cost figure copied into the pages, the chart alt text and make_gif.py must match site/data/<trip>.json.
+Each destination needs entry.us/entry.ng rules (paperwork.html) that the planner leadDays covers.
 Exit code 1 on any failure.
 """
 import re, sys
@@ -35,8 +36,17 @@ for j in SITE.rglob("*.json"):
     try:
         doc = json.loads(j.read_text(encoding="utf-8"))
         for d in doc.get("destinations", []):
-            for k in ("id", "name", "color", "hotel", "daily", "scores", "leadDays"):
+            for k in ("id", "name", "color", "hotel", "daily", "scores", "leadDays", "entry"):
                 if k not in d: errors.append(f"{j.name}: {d.get('id', '?')} has no {k}")
+            # Per-passport entry rules feed paperwork.html; the planner's leadDays must cover the slowest one
+            for p in ("us", "ng"):
+                e = d.get("entry", {}).get(p)
+                if not e: errors.append(f"{j.name}: {d.get('id', '?')} has no entry.{p}"); continue
+                if e.get("kind") not in ("none", "arrival", "online", "consulate"): errors.append(f"{j.name}: {d['id']} entry.{p} has bad kind {e.get('kind')!r}")
+                if not isinstance(e.get("days"), int) or e["days"] < 0: errors.append(f"{j.name}: {d['id']} entry.{p} needs whole days >= 0")
+                elif e["days"] > d.get("leadDays", 0): errors.append(f"{j.name}: {d['id']} leadDays {d.get('leadDays')} is shorter than entry.{p}.days {e['days']}")
+                if e.get("kind") in ("online", "consulate") and not e.get("days"): errors.append(f"{j.name}: {d['id']} entry.{p} is {e['kind']} but starts 0 days ahead")
+                if not e.get("need"): errors.append(f"{j.name}: {d['id']} entry.{p} has no need text")
     except Exception as e: errors.append(f"{j.relative_to(SITE)}: bad JSON ({e})")
 
 # --- Numbers: the trip JSON is the one source of truth; every hand-copied figure must match it ---------

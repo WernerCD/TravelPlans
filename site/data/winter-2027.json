@@ -51,7 +51,21 @@
       ],
       "flags": [
         "Hardest visa of the group for the Nigerian passport"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "none",
+          "days": 0,
+          "need": "No visa: 90 days in any 180. Fingerprints and photo at the border (EU Entry/Exit System); ETIAS not running yet.",
+          "link": "https://travel-europe.europa.eu/"
+        },
+        "ng": {
+          "kind": "consulate",
+          "days": 70,
+          "need": "Schengen visa at the German Consulate General in Lagos: EUR 90 plus service fee; appointment wait of 3 weeks or more, then 15 days processing (up to 45).",
+          "link": "https://nigeria.diplo.de/ng-en/service/visastart"
+        }
+      }
     },
     {
       "id": "barbados",
@@ -99,7 +113,21 @@
       "flags": [
         "Air Peace fare not published (not in the total)",
         "Air Peace flies once or twice a month; a 14-night stay may not fit"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 3,
+          "need": "Online immigration and customs form; it opens 72 hours before arrival.",
+          "link": "https://www.travelform.gov.bb/"
+        },
+        "ng": {
+          "kind": "online",
+          "days": 3,
+          "need": "No visa. Same online form, plus a yellow fever certificate for arrivals from Nigeria.",
+          "link": "https://www.travelform.gov.bb/"
+        }
+      }
     },
     {
       "id": "japan",
@@ -153,7 +181,21 @@
           "text": "Lunar New Year week: busier and pricier in Tokyo and Kyoto"
         }
       ],
-      "flags": []
+      "flags": [],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 3,
+          "need": "No visa: 90 days. Fill in Visit Japan Web before flying (recommended).",
+          "link": "https://services.digital.go.jp/en/visit-japan-web/"
+        },
+        "ng": {
+          "kind": "consulate",
+          "days": 30,
+          "need": "Japan visa at VFS Lagos or Abuja: JPY 15,000 single entry plus VFS fee; at least 12 to 14 working days.",
+          "link": "https://www.ng.emb-japan.go.jp/itprtop_en/index.html"
+        }
+      }
     },
     {
       "id": "thailand",
@@ -201,7 +243,21 @@
           "text": "Chinese New Year: Bangkok's Chinatown packed (fun, but book ahead)"
         }
       ],
-      "flags": []
+      "flags": [],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 3,
+          "need": "No visa: 30 days. Thailand Digital Arrival Card (free) within 3 days before arrival.",
+          "link": "https://tdac.immigration.go.th/"
+        },
+        "ng": {
+          "kind": "online",
+          "days": 35,
+          "need": "Thai e-visa, about 1,000 THB; the embassy in Abuja quotes 15 business days, sometimes 4 to 6 weeks.",
+          "link": "https://www.thaievisa.go.th/"
+        }
+      }
     },
     {
       "id": "vietnam",
@@ -249,7 +305,21 @@
           "text": "Tet (Lunar New Year, about 6 Feb): closures and sold-out transport"
         }
       ],
-      "flags": []
+      "flags": [],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 10,
+          "need": "Vietnam e-visa, $25 single entry, up to 90 days; about 3 to 5 working days.",
+          "link": "https://evisa.gov.vn/"
+        },
+        "ng": {
+          "kind": "online",
+          "days": 10,
+          "need": "Same e-visa and fee as the US passport.",
+          "link": "https://evisa.gov.vn/"
+        }
+      }
     },
     {
       "id": "kenya",
@@ -300,7 +370,21 @@
       "flags": [
         "Safari is most of the cost",
         "Compulsory travel insurance since Oct 2026 (about $50 each, in the total)"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 7,
+          "need": "Kenya eTA, $30, plus compulsory travel health insurance (since Oct 2026).",
+          "link": "https://www.etakenya.go.ke/"
+        },
+        "ng": {
+          "kind": "none",
+          "days": 0,
+          "need": "No eTA since July 2025. Check whether the new insurance rule applies before flying.",
+          "link": "https://www.etakenya.go.ke/"
+        }
+      }
     },
     {
       "id": "srilanka",
@@ -343,7 +427,21 @@
       "events": [],
       "flags": [
         "Nigerian traveller needs a sponsor in Sri Lanka to get a visa"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 3,
+          "need": "Online ETA, free for US citizens since May 2026 (re-check before travel).",
+          "link": "https://www.eta.gov.lk/"
+        },
+        "ng": {
+          "kind": "consulate",
+          "days": 45,
+          "need": "Not eligible for the online ETA: a sponsor in Sri Lanka applies in person at the Department of Immigration, with a police clearance.",
+          "link": "https://www.eta.gov.lk/slvisa/"
+        }
+      }
     },
     {
       "id": "senegal",
@@ -386,7 +484,19 @@
       "events": [],
       "flags": [
         "Harmattan dust can haze the sky in January and February"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "none",
+          "days": 0,
+          "need": "No visa: 90 days. Onward ticket and accommodation; 6 months on the passport recommended."
+        },
+        "ng": {
+          "kind": "none",
+          "days": 0,
+          "need": "No visa (ECOWAS): 90 days. Yellow fever certificate."
+        }
+      }
     },
     {
       "id": "capeverde",
@@ -436,7 +546,21 @@
       ],
       "flags": [
         "Nigerian route goes through Dakar: a connection in Lisbon needs a Schengen transit visa"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 10,
+          "need": "No visa up to 30 days, but EASE pre-registration and the 4,400-escudo airport tax at least 5 days before arrival.",
+          "link": "https://www.ease.gov.cv/"
+        },
+        "ng": {
+          "kind": "online",
+          "days": 10,
+          "need": "Visa-free (ECOWAS), same EASE registration and airport tax at least 5 days before arrival.",
+          "link": "https://www.ease.gov.cv/"
+        }
+      }
     },
     {
       "id": "malaysia",
@@ -492,7 +616,21 @@
       ],
       "flags": [
         "East-coast islands (Perhentian, Tioman) are closed by the monsoon until about March"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 3,
+          "need": "No visa: 90 days. Malaysia Digital Arrival Card (free) within 3 days before arrival.",
+          "link": "https://imigresen-online.imi.gov.my/mdac/main"
+        },
+        "ng": {
+          "kind": "online",
+          "days": 21,
+          "need": "Malaysia eVisa, 30 days; fee and processing time not officially published, so start three weeks ahead.",
+          "link": "https://malaysiavisa.imi.gov.my/evisa/evisa.jsp"
+        }
+      }
     },
     {
       "id": "tanzania",
@@ -550,7 +688,21 @@
       "flags": [
         "Safari is most of the cost",
         "Compulsory $44-a-person insurance for all of Tanzania including Zanzibar (in the total)"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "online",
+          "days": 21,
+          "need": "Tanzania e-visa: $100 multiple entry (the only option for Americans), plus $44 compulsory insurance.",
+          "link": "https://visa.immigration.go.tz/"
+        },
+        "ng": {
+          "kind": "online",
+          "days": 21,
+          "need": "Tanzania e-visa (ordinary processing since 25 Sep 2026; fee about $50, unconfirmed), plus $44 compulsory insurance.",
+          "link": "https://visa.immigration.go.tz/"
+        }
+      }
     },
     {
       "id": "egypt",
@@ -607,7 +759,20 @@
       ],
       "flags": [
         "Nigerian traveller needs an embassy visa"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "arrival",
+          "days": 0,
+          "need": "Visa on arrival or e-visa: $30 single entry, $33 from 1 Jan 2027.",
+          "link": "https://visa2egypt.gov.eg/"
+        },
+        "ng": {
+          "kind": "consulate",
+          "days": 45,
+          "need": "Embassy visa from the Egyptian embassy in Abuja or consulate in Lagos; no visa on arrival and no e-visa for Nigerians."
+        }
+      }
     },
     {
       "id": "italy",
@@ -657,7 +822,21 @@
       ],
       "flags": [
         "Hardest visa of the group, with Germany"
-      ]
+      ],
+      "entry": {
+        "us": {
+          "kind": "none",
+          "days": 0,
+          "need": "No visa: 90 days in any 180. EU Entry/Exit System at the border.",
+          "link": "https://travel-europe.europa.eu/"
+        },
+        "ng": {
+          "kind": "consulate",
+          "days": 90,
+          "need": "Schengen visa for the Italian consulate in Lagos, booked through TLScontact; long appointment waits reported, then 15 days processing (up to 45).",
+          "link": "https://conslagos.esteri.it/en/"
+        }
+      }
     }
   ],
   "visaChecked": "2026-11-27"

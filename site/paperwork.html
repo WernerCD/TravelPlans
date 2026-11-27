@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paperwork deadlines · Travel Plans</title>
+<meta name="description" content="Pick your first night and see, for all thirteen winter 2027 destinations, what the US and Nigerian passports must do before flying and the date to start each visa or form.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://wernercd.github.io/TravelPlans/paperwork.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paperwork deadlines · Travel Plans">
+<meta property="og:description" content="Visa and entry-form start dates for both passports, for any first night, with a calendar download.">
+<meta property="og:url" content="https://wernercd.github.io/TravelPlans/paperwork.html">
+<meta property="og:image" content="https://wernercd.github.io/TravelPlans/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('travel.theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="styles.css?v=dev">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap hub-bar">
+    <a href="./">&larr; Travel Plans</a>
+    <nav class="hub-nav" aria-label="Site">
+      <a href="./">Plans</a>
+      <a href="planner.html">Planner</a>
+      <a href="paperwork.html" aria-current="page">Paperwork</a>
+      <a href="changes.html">Changes</a>
+    </nav>
+  </div>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M28 4L3 14.5l9 3L15 27l4-8z"/></svg>
+      <div>
+        <h1>Paperwork deadlines</h1>
+        <p class="tagline">Winter 2027 · two weeks · St. Louis + Port Harcourt</p>
+      </div>
+    </div>
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="stack">
+    <h2>Apply by</h2>
+    <p class="small">Pick the first night of the trip. For every destination you get what each passport has to do before flying, the date to start it, and whether that is still safe from today. Start dates include a safety margin for appointment waits and slow processing; they are not the official minimums. The date is shared with the <a href="planner.html">Trip Planner</a>. Visa rules re-checked <span id="pwChecked">27 November 2026</span>; confirm on each official site before applying.</p>
+    <p id="pwFallback" class="small">Loading the deadlines...</p>
+    <div id="paperwork" class="picker" data-trip="winter-2027" hidden>
+      <div class="pick-form">
+        <label class="field" for="pwStart">First night<input type="date" id="pwStart" min="2027-01-01" max="2027-03-31"></label>
+        <label class="pw-check" for="pwHide"><input type="checkbox" id="pwHide"> Hide places that are too late</label>
+      </div>
+      <div id="pwSummary" class="note" role="status" aria-live="polite"></div>
+      <div class="pick-actions">
+        <button type="button" class="btn" id="pwIcs">Add deadlines to calendar (.ics)</button>
+        <button type="button" class="btn" id="pwShare">Copy link</button>
+        <span class="small" id="pwShareOut" role="status"></span>
+      </div>
+      <ol id="pwList" class="pick-list"></ol>
+      <p class="small">Kinds: <span class="chip g">Nothing before you fly</span> <span class="chip g">At the airport</span> <span class="chip w">Online</span> form or e-visa from home, <span class="chip b">Embassy or consulate</span> in-person visa with an appointment. Every rule, fee and source is on the <a href="winter-2027.html">Winter 2027 page</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="./">Travel Plans</a></li>
+      <li><a href="winter-2027.html">Winter 2027</a></li>
+      <li><a href="planner.html">Planner</a></li>
+      <li><a href="paperwork.html" aria-current="page">Paperwork</a></li>
+      <li><a href="changes.html">Changes</a></li>
+      <li><a href="https://github.com/WernerCD/TravelPlans" rel="noopener">Source code</a></li>
+      <li><a href="https://github.com/WernerCD/TravelPlans/issues" rel="noopener">Report a problem</a></li>
+    </ul>
+    <p>Personal trip research. Prices and entry rules are estimates from public sources and may be out of date; confirm with airlines and official government sites.</p>
+  </div>
+</footer>
+<script src="theme.js?v=dev"></script>
+<script src="paperwork.js?v=dev"></script>
+<script src="version.js?v=dev"></script>
+</body>
+</html>

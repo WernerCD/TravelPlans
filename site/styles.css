@@ -130,6 +130,16 @@ table.mini tbody th { width: auto; }
   table.mini td.small { text-align: right; white-space: normal; }
 }
 
+/* Paperwork deadlines */
+.pw-check { display: flex; gap: 8px; align-items: center; font-size: .85rem; align-self: end; min-height: 34px; }
+.pw-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.pw-overall { margin-left: auto; font-size: .8rem; font-weight: 600; }
+.pw-overall.late { color: var(--bad); } .pw-overall.soon { color: var(--warn); } .pw-overall.ok, .pw-overall.free { color: var(--good); }
+.pw-row { display: grid; grid-template-columns: 13em 1fr 15em; gap: 6px 14px; align-items: start; padding-top: 8px; border-top: 1px solid var(--line); font-size: .85rem; }
+.pw-who { display: grid; gap: 4px; justify-items: start; }
+.pw-when .chip { white-space: normal; }
+@media (max-width: 760px) { .pw-row { grid-template-columns: 1fr; } }
+
 /* Change log */
 .change-day { display: grid; gap: 8px; }
 .change-day ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
