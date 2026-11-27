@@ -57,16 +57,20 @@
           "kind": "none",
           "days": 0,
           "need": "No visa: 90 days in any 180. Fingerprints and photo at the border (EU Entry/Exit System); ETIAS not running yet.",
-          "link": "https://travel-europe.europa.eu/"
+          "link": "https://travel-europe.europa.eu/",
+          "short": "No visa, 90 days"
         },
         "ng": {
           "kind": "consulate",
           "days": 90,
           "need": "Schengen visa at the German Consulate General in Lagos: EUR 90; appointments only through an online waiting list in date order, then up to 15 days processing. A Jan/Feb 2027 trip is doubtful.",
           "link": "https://nigeria.diplo.de/ng-en/service/visastart",
-          "pack": "schengen-de"
+          "pack": "schengen-de",
+          "short": "Schengen visa, €90; appointment waiting list in Lagos"
         }
-      }
+      },
+      "season": "Cold, -2 to 4 °C, grey; Carnival early Feb",
+      "route": "One stop each; PHC via Frankfurt"
     },
     {
       "id": "barbados",
@@ -120,16 +124,20 @@
           "kind": "online",
           "days": 3,
           "need": "Online immigration and customs form; it opens 72 hours before arrival.",
-          "link": "https://www.travelform.gov.bb/"
+          "link": "https://www.travelform.gov.bb/",
+          "short": "No visa; online form 72 h before"
         },
         "ng": {
           "kind": "online",
           "days": 3,
           "need": "No visa. Same online form, plus a yellow fever certificate for arrivals from Nigeria.",
           "link": "https://www.travelform.gov.bb/",
-          "pack": "easy"
+          "pack": "easy",
+          "short": "No visa, 6 months; yellow fever card"
         }
-      }
+      },
+      "season": "Dry season, 25 to 30 °C",
+      "route": "STL one stop; Air Peace via Antigua, 1 to 2 flights a month"
     },
     {
       "id": "japan",
@@ -189,16 +197,20 @@
           "kind": "online",
           "days": 3,
           "need": "No visa: 90 days. Fill in Visit Japan Web before flying (recommended).",
-          "link": "https://services.digital.go.jp/en/visit-japan-web/"
+          "link": "https://services.digital.go.jp/en/visit-japan-web/",
+          "short": "No visa, 90 days"
         },
         "ng": {
           "kind": "consulate",
           "days": 30,
           "need": "Japan visa at VFS Lagos or Abuja: JPY 15,000 single entry plus VFS fee; at least 12 to 14 working days.",
           "link": "https://www.ng.emb-japan.go.jp/itprtop_en/index.html",
-          "pack": "japan"
+          "pack": "japan",
+          "short": "Japan visa at VFS, ¥15,000, 12 to 14 working days"
         }
-      }
+      },
+      "season": "Cold and clear: Tokyo 2 to 10 °C, Hokkaido snow",
+      "route": "One stop from STL; PHC 24 h+ via the Gulf"
     },
     {
       "id": "thailand",
@@ -252,16 +264,20 @@
           "kind": "online",
           "days": 3,
           "need": "No visa: 30 days. Thailand Digital Arrival Card (free) within 3 days before arrival.",
-          "link": "https://tdac.immigration.go.th/"
+          "link": "https://tdac.immigration.go.th/",
+          "short": "No visa, 30 days; arrival card"
         },
         "ng": {
           "kind": "online",
           "days": 42,
           "need": "Thai e-visa (about 1,000 THB). Nigerian applicants first need an NDLEA visa clearance and a POSSAP police clearance; then usually 15 business days, sometimes 4 to 6 weeks.",
           "link": "https://www.thaievisa.go.th/",
-          "pack": "thailand"
+          "pack": "thailand",
+          "short": "Online e-visa, ~$30; police and NDLEA clearances first, ~15 business days"
         }
-      }
+      },
+      "season": "Best season: dry, 25 to 32 °C",
+      "route": "PHC via Doha; STL one or two stops"
     },
     {
       "id": "vietnam",
@@ -315,16 +331,20 @@
           "kind": "online",
           "days": 10,
           "need": "Vietnam e-visa, $25 single entry, up to 90 days; about 3 to 5 working days.",
-          "link": "https://evisa.gov.vn/"
+          "link": "https://evisa.gov.vn/",
+          "short": "Online e-visa, $25, 3 to 5 days"
         },
         "ng": {
           "kind": "online",
           "days": 10,
           "need": "Same e-visa and fee as the US passport.",
           "link": "https://evisa.gov.vn/",
-          "pack": "easy"
+          "pack": "easy",
+          "short": "Same e-visa, $25, 3 to 5 days"
         }
-      }
+      },
+      "season": "North cool, south hot and dry; Tet about 6 Feb",
+      "route": "PHC via the Gulf or Addis; STL two stops"
     },
     {
       "id": "kenya",
@@ -381,16 +401,20 @@
           "kind": "online",
           "days": 7,
           "need": "Kenya eTA, $30, plus compulsory travel health insurance (since Oct 2026).",
-          "link": "https://www.etakenya.go.ke/"
+          "link": "https://www.etakenya.go.ke/",
+          "short": "Online eTA, $30, plus travel insurance"
         },
         "ng": {
           "kind": "none",
           "days": 0,
           "need": "No eTA since July 2025. Check whether the new insurance rule applies before flying.",
           "link": "https://www.etakenya.go.ke/",
-          "pack": "easy"
+          "pack": "easy",
+          "short": "No visa since 2025"
         }
-      }
+      },
+      "season": "Dry season, ideal for safari",
+      "route": "Kenya Airways Lagos-Nairobi nonstop; STL two stops"
     },
     {
       "id": "srilanka",
@@ -439,16 +463,20 @@
           "kind": "online",
           "days": 3,
           "need": "Online ETA, free for US citizens since May 2026 (re-check before travel).",
-          "link": "https://www.eta.gov.lk/"
+          "link": "https://www.eta.gov.lk/",
+          "short": "Online ETA, free for US citizens"
         },
         "ng": {
           "kind": "consulate",
           "days": 45,
           "need": "Not eligible for the online ETA: a sponsor in Sri Lanka applies in person at the Department of Immigration, with a police clearance.",
           "link": "https://www.eta.gov.lk/slvisa/",
-          "pack": "srilanka"
+          "pack": "srilanka",
+          "short": "Sponsored visa: a sponsor in Sri Lanka applies in person"
         }
-      }
+      },
+      "season": "Best season for the south and west coasts",
+      "route": "PHC via Doha or Dubai; STL two stops"
     },
     {
       "id": "senegal",
@@ -496,15 +524,19 @@
         "us": {
           "kind": "none",
           "days": 0,
-          "need": "No visa: 90 days. Onward ticket and accommodation; 6 months on the passport recommended."
+          "need": "No visa: 90 days. Onward ticket and accommodation; 6 months on the passport recommended.",
+          "short": "No visa, 90 days"
         },
         "ng": {
           "kind": "none",
           "days": 0,
           "need": "No visa (ECOWAS): 90 days. Yellow fever certificate.",
-          "pack": "easy"
+          "pack": "easy",
+          "short": "No visa (ECOWAS), 90 days"
         }
-      }
+      },
+      "season": "Dry, 24 to 30 °C; harmattan haze",
+      "route": "Lagos-Dakar direct; STL via New York"
     },
     {
       "id": "capeverde",
@@ -560,16 +592,20 @@
           "kind": "online",
           "days": 10,
           "need": "No visa up to 30 days, but EASE pre-registration and the 4,400-escudo airport tax at least 5 days before arrival.",
-          "link": "https://www.ease.gov.cv/"
+          "link": "https://www.ease.gov.cv/",
+          "short": "No visa (30 days); EASE tax online"
         },
         "ng": {
           "kind": "online",
           "days": 10,
           "need": "Visa-free (ECOWAS), same EASE registration and airport tax at least 5 days before arrival.",
           "link": "https://www.ease.gov.cv/",
-          "pack": "easy"
+          "pack": "easy",
+          "short": "No visa (ECOWAS); EASE tax online"
         }
-      }
+      },
+      "season": "Dry, 22 to 26 °C, trade winds; Carnival 7 to 9 Feb",
+      "route": "Via Dakar for PHC; STL via Boston and Lisbon"
     },
     {
       "id": "malaysia",
@@ -631,16 +667,20 @@
           "kind": "online",
           "days": 3,
           "need": "No visa: 90 days. Malaysia Digital Arrival Card (free) within 3 days before arrival.",
-          "link": "https://imigresen-online.imi.gov.my/mdac/main"
+          "link": "https://imigresen-online.imi.gov.my/mdac/main",
+          "short": "No visa, 90 days; arrival card"
         },
         "ng": {
           "kind": "online",
           "days": 21,
           "need": "Malaysia eVisa, 30 days; fee and processing time not officially published, so start three weeks ahead.",
           "link": "https://malaysiavisa.imi.gov.my/evisa/evisa.jsp",
-          "pack": "malaysia"
+          "pack": "malaysia",
+          "short": "Online eVisa, 30 days; fee unconfirmed"
         }
-      }
+      },
+      "season": "West coast driest; east-coast islands shut",
+      "route": "PHC via the Gulf or Istanbul; STL 27 h+"
     },
     {
       "id": "tanzania",
@@ -704,16 +744,20 @@
           "kind": "online",
           "days": 21,
           "need": "Tanzania e-visa: $100 multiple entry (the only option for Americans), plus $44 compulsory insurance.",
-          "link": "https://visa.immigration.go.tz/"
+          "link": "https://visa.immigration.go.tz/",
+          "short": "Online e-visa, $100, plus $44 insurance"
         },
         "ng": {
           "kind": "online",
           "days": 21,
           "need": "Tanzania e-visa (ordinary processing since 25 Sep 2026; fee about $50, unconfirmed), plus $44 compulsory insurance.",
           "link": "https://visa.immigration.go.tz/",
-          "pack": "tanzania"
+          "pack": "tanzania",
+          "short": "Online e-visa, ~$50, plus $44 insurance"
         }
-      }
+      },
+      "season": "Short dry season; calving; Zanzibar 30 °C",
+      "route": "Kenya Airways or Ethiopian from Lagos; STL into Kilimanjaro"
     },
     {
       "id": "egypt",
@@ -776,15 +820,19 @@
           "kind": "arrival",
           "days": 0,
           "need": "Visa on arrival or e-visa: $30 single entry, $33 from 1 Jan 2027.",
-          "link": "https://visa2egypt.gov.eg/"
+          "link": "https://visa2egypt.gov.eg/",
+          "short": "Visa on arrival, $30 ($33 from Jan)"
         },
         "ng": {
           "kind": "consulate",
           "days": 45,
           "need": "Embassy visa from the Egyptian embassy in Abuja or consulate in Lagos; no visa on arrival and no e-visa for Nigerians.",
-          "pack": "egypt"
+          "pack": "egypt",
+          "short": "Embassy visa in Abuja or Lagos, about 6 weeks"
         }
-      }
+      },
+      "season": "Best of the year: 20 to 26 °C",
+      "route": "EgyptAir Lagos-Cairo nonstop; STL one or two stops"
     },
     {
       "id": "italy",
@@ -840,16 +888,20 @@
           "kind": "none",
           "days": 0,
           "need": "No visa: 90 days in any 180. EU Entry/Exit System at the border.",
-          "link": "https://travel-europe.europa.eu/"
+          "link": "https://travel-europe.europa.eu/",
+          "short": "No visa, 90 days"
         },
         "ng": {
           "kind": "consulate",
           "days": 90,
           "need": "Schengen visa for the Italian consulate in Lagos, booked through TLScontact; long appointment waits reported, then 15 days processing (up to 45).",
           "link": "https://conslagos.esteri.it/en/",
-          "pack": "schengen-it"
+          "pack": "schengen-it",
+          "short": "Schengen visa, €90, via TLScontact Lagos"
         }
-      }
+      },
+      "season": "Cool and quiet: Rome 12 to 14 °C; Venice Carnival",
+      "route": "STL one stop to Rome; PHC via Istanbul or Brussels"
     }
   ],
   "visaChecked": "2026-11-27"

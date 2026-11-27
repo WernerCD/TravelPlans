@@ -38,7 +38,7 @@ for j in SITE.rglob("*.json"):
     try:
         doc = json.loads(j.read_text(encoding="utf-8"))
         for d in doc.get("destinations", []):
-            for k in ("id", "name", "color", "hotel", "daily", "scores", "leadDays", "entry"):
+            for k in ("id", "name", "color", "hotel", "daily", "scores", "leadDays", "entry", "season", "route"):
                 if k not in d: errors.append(f"{j.name}: {d.get('id', '?')} has no {k}")
             # Per-passport entry rules feed paperwork.html; the planner's leadDays must cover the slowest one
             for p in ("us", "ng"):
@@ -49,6 +49,7 @@ for j in SITE.rglob("*.json"):
                 elif e["days"] > d.get("leadDays", 0): errors.append(f"{j.name}: {d['id']} leadDays {d.get('leadDays')} is shorter than entry.{p}.days {e['days']}")
                 if e.get("kind") in ("online", "consulate") and not e.get("days"): errors.append(f"{j.name}: {d['id']} entry.{p} is {e['kind']} but starts 0 days ahead")
                 if not e.get("need"): errors.append(f"{j.name}: {d['id']} entry.{p} has no need text")
+                if not e.get("short") or len(e["short"]) > 80: errors.append(f"{j.name}: {d['id']} entry.{p} needs a short summary (80 characters at most) for the at-a-glance table")
                 if e.get("pack"): pack_refs.append((d["id"], p, e["pack"]))
     except Exception as e: errors.append(f"{j.relative_to(SITE)}: bad JSON ({e})")
 

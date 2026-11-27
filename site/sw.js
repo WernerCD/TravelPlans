@@ -8,7 +8,7 @@ var CACHE = 'travelplans-' + BUILD;
 // Everything a reader needs offline. tools/check_site.py fails the deploy if any of these files is missing.
 var PRECACHE = [
   './', 'index.html', 'winter-2027.html', 'planner.html', 'when.html', 'paperwork.html', 'visa-pack.html', 'changes.html', '404.html',
-  'styles.css', 'theme.js', 'version.js', 'planner.js', 'when.js', 'paperwork.js', 'visapack.js',
+  'styles.css', 'theme.js', 'version.js', 'planner.js', 'glance.js', 'when.js', 'paperwork.js', 'visapack.js',
   'data/winter-2027.json', 'data/visa-pack.json', 'icon.svg', 'icon-192.png', 'manifest.webmanifest'
 ];
 

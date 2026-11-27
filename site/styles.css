@@ -192,6 +192,21 @@ main.wrap { grid-template-columns: minmax(0, 1fr); }
 .wh-legend .wh-c { display: inline-block; min-width: 26px; padding: 1px 6px; border-radius: 4px; text-align: center; }
 @media print { .wh-col { border: 0; } }
 
+/* At-a-glance tables (glance.js): rows are destinations; phones get one card per row */
+table.glance { min-width: 0; font-size: .9rem; }
+table.glance thead th { font-family: var(--body); font-size: .8rem; font-weight: 600; color: var(--muted); }
+table.glance tbody th { width: auto; border-left: 4px solid var(--dest, transparent); color: var(--fg); font-size: .95rem; white-space: nowrap; }
+table.glance tbody th a { color: inherit; }
+table.glance .chip { margin-right: 6px; }
+.gl-sort { grid-template-columns: auto auto; align-items: center; gap: 8px; }
+@media (max-width: 640px) {
+  table.glance thead { display: none; }
+  table.glance tr { display: grid; grid-template-columns: 1fr; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  table.glance tr:last-child { border-bottom: 0; }
+  table.glance th, table.glance td { border-bottom: 0; padding: 3px 12px; }
+  table.glance td::before { content: attr(data-label) ": "; color: var(--muted); font-size: .8rem; font-weight: 600; }
+}
+
 /* Change log */
 .change-day { display: grid; gap: 8px; }
 .change-day ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }

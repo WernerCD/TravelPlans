@@ -54,6 +54,7 @@
   <section class="stack">
     <span class="eyebrow">Researched 26 November 2026 · visa rules re-checked 27 November 2026</span>
     <h2>The short version</h2>
+    <p class="small">All thirteen destinations side by side: <a href="#at-a-glance">at a glance</a>.</p>
     <ul>
       <li><b>Japan is the strongest pick for two weeks.</b> Most to do, low daily costs, and winter suits it. The Nigerian passport needs a visa: apply in December for a February trip. <a href="#japan">Full plan below.</a></li>
       <li><b>Thailand is the best alternative.</b> No visa for the US passport, an online e-visa in about a week for the Nigerian one, low costs, and its best weather of the year. <a href="#thailand">Full plan below.</a></li>
@@ -68,6 +69,24 @@
   <section class="note">
     <strong>Assumptions</strong>
     <p class="small">The St. Louis traveller holds a <b>US passport</b>; the Port Harcourt traveller holds a <b>Nigerian passport</b>. Both meet at the destination. Costs are for one 14-night trip, both people combined, one mid-range room. If either passport is different, the visa rows change.</p>
+  </section>
+
+  <section class="stack" id="at-a-glance">
+    <h2>All thirteen at a glance</h2>
+    <p class="small">One row per destination, built from the same trip data as the <a href="planner.html">Trip Planner</a>, so these figures always match it. Totals are estimates for both travellers: 14 nights, mid-range hotels, round-trip flights from St. Louis and Port Harcourt. Marks: <span class="chip g">✓</span> no visa (a free arrival form or tax may still be filed online), <span class="chip w">⚠</span> online form or e-visa, <span class="chip b">✕</span> embassy or consulate visa. The detailed tables further down have the reasoning and sources.</p>
+    <p id="glFallback" class="small">Loading the summary tables...</p>
+    <div id="glance" data-trip="winter-2027" hidden>
+      <div class="pick-actions">
+        <div id="glViews" class="vp-tabs" role="group" aria-label="Choose a table"></div>
+      </div>
+      <div class="pick-actions">
+        <label class="field gl-sort" for="glSort">Sort
+          <select id="glSort"><option value="cost">Cheapest first</option><option value="visa">Easiest visas first</option><option value="name">A to Z</option></select></label>
+        <label class="pw-check" for="glHide"><input type="checkbox" id="glHide"> Hide places needing an embassy visa</label>
+        <span class="small" id="glCount" role="status"></span>
+      </div>
+      <div class="tablewrap"><table id="glTable" class="glance"></table></div>
+    </div>
   </section>
 
   <section class="note" id="pick">
@@ -112,7 +131,7 @@
           <td>$200 to $300 a day: <b>$2,800 to $4,200</b></td>
           <td>$150 to $200 a day: <b>$2,100 to $2,800</b></td></tr>
         <tr><th>Trains, domestic flights, extras</th><td>Rail between cities: in daily costs</td><td>None needed</td><td>Trains, one flight to Sapporo, a ryokan night: <b>$700 to $1,300</b></td></tr>
-        <tr><th>Visa fees</th><td>About $100 to $200</td><td>$0</td><td>About $25 to $100</td></tr>
+        <tr><th>Visa fees</th><td>About $100 to $200</td><td>$0</td><td>About $100 to $130</td></tr>
         <tr><th>Rough total for 2</th>
           <td><b>$5,600 to $7,700</b> <span class="chip g">Cheapest</span></td>
           <td><b>$6,750 to $10,700</b> plus the Air Peace fare <span class="chip b">Priciest</span></td>
@@ -586,6 +605,7 @@
   </div>
 </footer>
 <script src="theme.js?v=dev"></script>
+<script src="glance.js?v=dev"></script>
 <script src="version.js?v=dev"></script>
 </body>
 </html>
