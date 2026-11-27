@@ -1,4 +1,4 @@
-/* TravelPlans paperwork deadlines v1: for one first-night date, lists what each passport must do before
+/* TravelPlans paperwork deadlines v1.1 (links each visa to its visa-pack.html checklist via entry.<passport>.pack): for one first-night date, lists what each passport must do before
    flying to every destination in data/<trip>.json (entry.us / entry.ng), the date to start it, and whether
    that is still safe from today. Shares the planner's saved start date (travel.planner.<trip>); a #d=YYYY-MM-DD
    link carries the date to someone else. Calendar download builds an .ics of every deadline in the browser. */
@@ -118,6 +118,7 @@
         var what = el('div', 'pw-what');
         what.appendChild(el('span', null, a.e.need + ' '));
         if (a.e.link) { var l = el('a', null, 'Official site'); l.href = a.e.link; l.rel = 'noopener'; what.appendChild(l); }
+        if (a.e.pack) { what.appendChild(document.createTextNode(' · ')); var c = el('a', null, 'Document checklist'); c.href = 'visa-pack.html#p=' + a.e.pack; what.appendChild(c); }
         row.appendChild(what);
         var when = el('div', 'pw-when');
         when.appendChild(statusChip(a));

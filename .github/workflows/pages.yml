@@ -27,8 +27,9 @@ jobs:
           python-version: '3.12'
       - name: Check site
         run: python tools/check_site.py
+      # Every page and script, so data fetches (paperwork.js, visapack.js) and the sw.js registration (theme.js) get the build id too
       - name: Cache-bust asset links with the commit id
-        run: sed -i "s/?v=dev/?v=${GITHUB_SHA::8}/g" site/*.html site/planner.js
+        run: sed -i "s/?v=dev/?v=${GITHUB_SHA::8}/g" site/*.html site/*.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

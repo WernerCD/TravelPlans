@@ -1,0 +1,218 @@
+{
+  "checked": "27 November 2026",
+  "note": "Checklists for the Nigerian passport (Port Harcourt resident, tourism, about 14 nights, US-citizen partner who may pay). Steps are in the order to gather them. (unconfirmed) marks items only secondary sources gave.",
+  "packs": [
+    {
+      "id": "both", "short": "Every trip", "title": "Before any trip: both travellers", "color": "#0f7f86",
+      "where": "At home, before booking", "startBy": "As soon as a destination is chosen",
+      "steps": [
+        "Check both passports are valid at least 6 months past the return date, with 2 or more blank pages.",
+        "Nigerian traveller: find the original yellow fever certificate (Kenya, Senegal, Cape Verde, Tanzania, Thailand, Malaysia, Sri Lanka and Barbados may ask for it).",
+        "Decide who pays for what; if the US partner pays, get 3 months of their bank statements and a signed letter of support (dates, purpose, costs covered).",
+        "Nigerian traveller: ask the employer now for a letter confirming the job, salary and approved leave dates.",
+        "Buy travel insurance that covers medical care and repatriation (Schengen needs EUR 30,000; Kenya and Tanzania require their own policies).",
+        "Hold flight reservations, not paid tickets, until the visa is approved, or buy refundable fares.",
+        "In the last 72 hours: fill in the arrival form the destination uses (Visit Japan Web, TDAC, MDAC, EASE, Barbados travel form)."
+      ],
+      "sources": [
+        { "label": "ECOWAS free-movement protocol (health certificate)", "url": "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf" },
+        { "label": "Paperwork deadlines", "url": "https://wernercd.github.io/TravelPlans/paperwork.html" }
+      ]
+    },
+    {
+      "id": "thailand", "short": "Thailand", "title": "Thailand e-Visa (tourist)", "color": "#7e57c2",
+      "where": "Online at thaievisa.go.th, under the Royal Thai Embassy in Abuja (online only since 1 Jan 2025)",
+      "fee": "About 1,000 THB (~$30 to $40), paid online, not refundable (unconfirmed: the embassy doesn't publish it)",
+      "time": "Usually 15 business days; some cases 4 to 6 weeks",
+      "startBy": "About 6 weeks before the first night, because of the two Nigerian clearances",
+      "steps": [
+        "Check the passport is valid at least 6 months beyond the date of entry into Thailand.",
+        "Apply now for the NDLEA visa clearance (mandatory for Nigerian passports).",
+        "Apply now for a police clearance certificate from POSSAP (mandatory for Nigerian passports).",
+        "Have a passport photo taken (no older than 6 months).",
+        "Get a recent bank statement with at least NGN 2,000,000 and 3 months of transactions; if the partner co-funds, add their statement and letter of support (unconfirmed that it counts).",
+        "Get proof of accommodation: hotel bookings for every night.",
+        "Get a confirmed round-trip flight reservation.",
+        "Optional: a day-by-day plan or tour bookings.",
+        "Fill in the form on thaievisa.go.th, upload everything and pay.",
+        "After approval: print the e-Visa, and fill in the Thailand Digital Arrival Card within 3 days before arrival."
+      ],
+      "sources": [
+        { "label": "Royal Thai Embassy Abuja: e-Visa requirements", "url": "https://abuja.thaiembassy.org/th/content/thailand-e-visa-application-requirements" },
+        { "label": "Thai MFA tourist visa list", "url": "https://image.mfa.go.th/mfa/0/n3gTFT2TOE/Visa_Requirements/Tourist_Visa_-_List.pdf" },
+        { "label": "thaievisa.go.th", "url": "https://www.thaievisa.go.th/" }
+      ]
+    },
+    {
+      "id": "japan", "short": "Japan", "title": "Japan tourist visa", "color": "#b5363a",
+      "where": "In person at the VFS Japan Visa Application Centre in Abuja or Lagos (Embassy of Japan in Nigeria)",
+      "fee": "JPY 15,000 single entry since 1 July 2026 (the embassy's naira table may still show the old NGN 31,300; check at VFS), plus VFS service fee",
+      "time": "At least 12 working days in Abuja, 14 in Lagos",
+      "startBy": "About 30 days before the first night",
+      "steps": [
+        "Check the passport has 2 blank pages and is valid for the whole stay.",
+        "Fill in the visa application form (typed is best) and sign it by hand, matching the passport signature; attach a photo to the embassy's spec.",
+        "Print a flight itinerary with flight numbers and every time (leaving Nigeria, transit, in and out of Japan). Don't buy tickets yet.",
+        "Fill in the embassy's \"Travel Itinerary in Japan\" form: a daily plan with hotel names, addresses and phone numbers (bookings not required).",
+        "Get the original bank statement for the last 3 months from whoever pays; if the US partner pays, add their statement and a signed letter of sponsorship.",
+        "Get an original certificate of employment on letterhead (start date, position, salary, signer); self-employed: a letter of self-introduction.",
+        "Recommended: the employer's company tax clearance and certificate of incorporation.",
+        "Submit in person at VFS Abuja or Lagos (closed weekends and Nigerian holidays)."
+      ],
+      "sources": [
+        { "label": "Embassy of Japan in Nigeria: visa", "url": "https://www.ng.emb-japan.go.jp/itpr_en/00_000092.html" },
+        { "label": "VFS Japan Nigeria: required documents", "url": "https://visa.vfsglobal.com/one-pager/japan/nigeria/english/pdf/Guidance-for-Required-Documents.pdf" },
+        { "label": "MOFA: visa fees from July 2026", "url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html" }
+      ]
+    },
+    {
+      "id": "egypt", "short": "Egypt", "title": "Egypt tourist visa (embassy)", "color": "#8b5e3c",
+      "where": "In person at the Egyptian embassy in Abuja or the consulate general in Lagos (no e-visa or visa on arrival for Nigerians)",
+      "fee": "Ask the embassy; fees for Nigerians were revised in 2025 (unconfirmed)",
+      "time": "1 to 3 weeks reported, plus a possible security-clearance wait (unconfirmed)",
+      "startBy": "About 6 weeks before the first night",
+      "note": "No official checklist could be found online, so this list is built from secondary sources. Phone the embassy first: the published addresses disagree.",
+      "steps": [
+        "Phone the embassy or consulate to confirm the current form, fee and opening hours.",
+        "Check the passport is valid 6 months beyond the stay.",
+        "Fill in the embassy application form and add 2 passport photos.",
+        "Get a return flight reservation and hotel bookings for the whole stay.",
+        "Get 3 to 6 months of bank statements and an employment letter; if the partner pays, add their letter of support and statement.",
+        "Write a short cover letter with the itinerary (Cairo, Aswan, Nile cruise, Luxor).",
+        "Submit in person and allow several weeks for a security clearance (unconfirmed)."
+      ],
+      "sources": [
+        { "label": "Sahara Reporters: Egypt revises fees for Nigerians (2025)", "url": "https://saharareporters.com/2025/01/19/egypt-grants-visa-waivers-nigerian-diplomats-revises-fees-citizens" },
+        { "label": "Egypt visa policy (Timatic summary)", "url": "https://en.wikipedia.org/wiki/Visa_policy_of_Egypt" }
+      ]
+    },
+    {
+      "id": "schengen-de", "short": "Germany", "title": "Schengen visa for Germany", "color": "#3b4a63",
+      "where": "German Consulate General in Lagos (Abuja only for special categories); appointments through an online waiting list",
+      "fee": "EUR 90, paid in naira at the day's rate; not refundable",
+      "time": "Up to 15 calendar days after the appointment; the waiting list comes first",
+      "startBy": "About 3 months before the first night (join the waiting list now)",
+      "note": "Appointments are given in date order from the waiting list, and the consulate says requests for special appointments have no chance, so a January or February 2027 trip is doubtful. A Verpflichtungserklaerung is only for sponsors living in Germany; a US partner uses a letter of support instead (unconfirmed).",
+      "steps": [
+        "Join the appointment waiting list on the consulate's online booking system (free, one per person); print the confirmation.",
+        "Fill in the VIDEX application form, then sign it with place and date.",
+        "Sign the section 54 AufenthG declaration and the data-protection form.",
+        "Copy the passport data page; add the birth certificate and copies of any earlier Schengen visas.",
+        "Buy Schengen travel health insurance with at least EUR 30,000 cover.",
+        "Get a flight reservation, proof of accommodation and a travel itinerary.",
+        "Get stamped bank statements (3 to 6 months is typical; unconfirmed); if the partner pays, add their letter of support, statements and passport copy.",
+        "Get proof of ties to Nigeria: employment letter with approved leave, company documents, property or family.",
+        "Bring 2 biometric photos (35 x 45 mm), all originals and a prepaid courier envelope.",
+        "Sort the file exactly in the checklist's order: unsorted files are rejected."
+      ],
+      "sources": [
+        { "label": "German missions in Nigeria: tourist checklist (June 2026)", "url": "https://nigeria.diplo.de/resource/blob/2778082/beeb2f11b8f008f972f59288d995aef5/tourist-data.pdf" },
+        { "label": "Visa appointments", "url": "https://nigeria.diplo.de/ng-en/service/visastart" }
+      ]
+    },
+    {
+      "id": "schengen-it", "short": "Italy", "title": "Schengen visa for Italy", "color": "#6a1b9a",
+      "where": "Apply at TLScontact Lagos (Ivie House, Victoria Island) or Abuja; the Italian Consulate General in Lagos decides",
+      "fee": "EUR 90 plus the TLScontact service fee",
+      "time": "About 15 days after the appointment (unconfirmed); slots fill fast",
+      "startBy": "About 3 months before the first night",
+      "steps": [
+        "Book an appointment at it.tlscontact.com.",
+        "Fill in and sign the Schengen application form.",
+        "Check the passport is valid at least 3 months beyond the stay; add 1 recent ICAO-standard photo.",
+        "Get a return flight reservation.",
+        "Get proof of accommodation: hotel bookings for every night.",
+        "Buy health insurance with at least EUR 30,000 cover for medical costs, hospital care and repatriation.",
+        "Get an employer letter stating annual leave; business owners add the tax and incorporation certificates.",
+        "Add proof of ties to Nigeria, such as a marriage certificate or property documents.",
+        "Get bank statements for the last 3 months showing enough funds for the stay; if the partner pays, add their letter of support and statements (unconfirmed)."
+      ],
+      "sources": [
+        { "label": "Consolato Generale Lagos: tourism checklist (Italian)", "url": "https://conslagos.esteri.it/wp-content/uploads/2026/06/TURISMO.pdf" },
+        { "label": "TLScontact Lagos", "url": "https://conslagos.esteri.it/en/?p=3749" }
+      ]
+    },
+    {
+      "id": "malaysia", "short": "Malaysia", "title": "Malaysia eVisa", "color": "#5c6b00",
+      "where": "Online at the Malaysian immigration eVisa portal",
+      "fee": "RM105 processing plus a visa fee set by nationality, about $25 to $45 in total (unconfirmed)",
+      "time": "3 to 10 business days (unconfirmed)",
+      "startBy": "About 3 weeks before the first night",
+      "steps": [
+        "Check the passport is valid more than 6 months from the travel date.",
+        "Scan the passport bio page in colour.",
+        "Get a studio passport-size photo, as a digital file.",
+        "Get a return flight booking (unconfirmed).",
+        "Get hotel bookings (unconfirmed).",
+        "Apply and pay on the official eVisa portal.",
+        "Print the eVisa on A4 and carry it with the ticket; fill in the free MDAC within 3 days before arrival."
+      ],
+      "sources": [
+        { "label": "Malaysia eVisa portal", "url": "https://malaysiavisa.imi.gov.my/evisa/evisa.jsp" },
+        { "label": "Malaysia eVisa guide (embassy PDF)", "url": "https://malasia.embajada.gov.co/sites/default/files/evisa_about_malasia.pdf" },
+        { "label": "MDAC (official)", "url": "https://imigresen-online.imi.gov.my/mdac/main" }
+      ]
+    },
+    {
+      "id": "tanzania", "short": "Tanzania", "title": "Tanzania e-Visa", "color": "#00695c",
+      "where": "Online at visa.immigration.go.tz",
+      "fee": "$50 ordinary single entry (unconfirmed), plus $44 compulsory insurance",
+      "time": "About 10 working days; allow 2 to 3 weeks",
+      "startBy": "About 3 weeks before the first night",
+      "steps": [
+        "Check the passport is valid at least 6 months from arrival.",
+        "Scan the passport bio page in colour and get a recent passport photo.",
+        "Get a return ticket (shown on arrival) and the safari and hotel bookings.",
+        "Apply and pay on visa.immigration.go.tz.",
+        "Buy the compulsory $44 inbound insurance (one policy covers the mainland and Zanzibar).",
+        "Print the e-Visa grant notice and the insurance certificate; carry the yellow fever card."
+      ],
+      "sources": [
+        { "label": "Tanzania High Commission: entry requirements", "url": "https://www.my.tzembassy.go.tz/services/visa-entry-requirements" },
+        { "label": "Tanzania e-Visa (official)", "url": "https://visa.immigration.go.tz/" },
+        { "label": "Mainland insurance rule", "url": "https://www.tanzaniainvest.com/tourism/mainland-mandatory-travel-insurance" }
+      ]
+    },
+    {
+      "id": "srilanka", "short": "Sri Lanka", "title": "Sri Lanka sponsored visa", "color": "#a15c1d",
+      "where": "A sponsor in Sri Lanka applies in person at the Department of Immigration and Emigration, Battaramulla",
+      "fee": "About $50 (unconfirmed)",
+      "time": "Apply at least a month ahead",
+      "startBy": "About 6 weeks before the first night",
+      "note": "Without a sponsor in Sri Lanka (a citizen, a registered tour operator or a hotel) this visa isn't possible.",
+      "steps": [
+        "Find a Sri Lankan sponsor: a citizen, a registered tour operator or a hotel.",
+        "Sponsor: write a request letter to the Controller General of Immigration (unconfirmed wording).",
+        "Sponsor: swear an affidavit and certify a copy of their national ID card or passport (unconfirmed).",
+        "Applicant: copy the passport bio page (valid 6 months or more, 1 blank page).",
+        "Applicant: get a police clearance certificate from POSSAP.",
+        "Applicant: proof of accommodation, a return ticket, bank statements and the partner's letter of support.",
+        "Applicant: Visit Visa Form B and a colour photo (4.5 x 3.5 cm).",
+        "Sponsor: lodge everything at Battaramulla; once approved, print and carry the ETA approval."
+      ],
+      "sources": [
+        { "label": "Sri Lanka ETA: restricted countries", "url": "https://www.eta.gov.lk/slvisa/" },
+        { "label": "Department of Immigration", "url": "https://www.immigration.gov.lk/" },
+        { "label": "Legit.ng: special process for Nigerians (Oct 2026)", "url": "https://www.legit.ng/people/1737436-sri-lanka-announces-special-eta-application-process-nigerians-4-countries/" }
+      ]
+    },
+    {
+      "id": "easy", "short": "Easy ones", "title": "Senegal, Cape Verde, Kenya, Vietnam, Barbados", "color": "#9a6a00",
+      "where": "No embassy visit for the Nigerian passport", "startBy": "See the Paperwork deadlines page (3 to 14 days)",
+      "steps": [
+        "Senegal: nothing to apply for (ECOWAS, 90 days). Carry the original yellow fever certificate and a return ticket.",
+        "Cape Verde: register on EASE (ease.gov.cv) at least 5 days before arrival and pay the airport tax; carry the yellow fever card.",
+        "Kenya: no eTA for Nigerians since 2025, but check etakenya.go.ke for the new travel insurance rule; carry a return ticket and the yellow fever card.",
+        "Vietnam: e-visa on evisa.gov.vn ($25 single entry): upload the passport bio page and a portrait photo; print the approval.",
+        "Barbados: no visa; fill in the online immigration and customs form (opens 72 hours before arrival) and carry the yellow fever card."
+      ],
+      "sources": [
+        { "label": "GOV.UK: Senegal entry requirements", "url": "https://www.gov.uk/foreign-travel-advice/senegal/entry-requirements" },
+        { "label": "Cape Verde EASE", "url": "https://www.ease.gov.cv/" },
+        { "label": "Kenya eTA", "url": "https://www.etakenya.go.ke/" },
+        { "label": "Vietnam e-visa", "url": "https://evisa.gov.vn/" },
+        { "label": "Barbados travel form", "url": "https://www.travelform.gov.bb/" }
+      ]
+    }
+  ]
+}

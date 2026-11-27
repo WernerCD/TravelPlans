@@ -130,6 +130,9 @@ table.mini tbody th { width: auto; }
   table.mini td.small { text-align: right; white-space: normal; }
 }
 
+/* Offline bar (theme.js) */
+.offline-bar { background: var(--chip-warn); color: var(--fg); border-bottom: 1px solid var(--line); padding: 8px 16px; font-size: .85rem; text-align: center; }
+
 /* Paperwork deadlines */
 .pw-check { display: flex; gap: 8px; align-items: center; font-size: .85rem; align-self: end; min-height: 34px; }
 .pw-check input { width: 18px; height: 18px; accent-color: var(--accent); }
@@ -139,6 +142,29 @@ table.mini tbody th { width: auto; }
 .pw-who { display: grid; gap: 4px; justify-items: start; }
 .pw-when .chip { white-space: normal; }
 @media (max-width: 760px) { .pw-row { grid-template-columns: 1fr; } }
+
+/* Visa pack */
+.vp-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.vp-tab { display: inline-flex; gap: 6px; align-items: center; }
+.vp-tab[aria-pressed="true"] { border-color: var(--accent); background: var(--panel); font-weight: 600; box-shadow: inset 0 -2px 0 var(--accent); }
+.vp-count { font-size: .75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.vp-pack { border: 1px solid var(--line); border-left: 4px solid var(--dest, var(--accent)); border-radius: 8px; padding: 14px 16px; display: grid; gap: 10px; background: var(--bg); }
+.vp-title { color: var(--fg); } /* the destination colour is the light-theme hex, so only the border uses it */
+.vp-facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; font-size: .85rem; }
+.vp-facts dt { font-weight: 600; color: var(--muted); }
+.vp-facts dd { margin: 0; }
+.vp-steps { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 6px; counter-reset: vp; }
+.vp-steps li { display: grid; grid-template-columns: 1.6em 22px 1fr; gap: 8px; align-items: start; font-size: .9rem; counter-increment: vp; }
+.vp-steps li::before { content: counter(vp) "."; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.vp-steps input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent); }
+.vp-steps label { cursor: pointer; }
+.vp-steps li.done label { color: var(--muted); text-decoration: line-through; }
+.vp-sources a { color: inherit; }
+@media print {
+  .vp-tabs, #vpFallback { display: none; }
+  .vp-pack { border: 0; padding: 0; }
+  .vp-steps li.done label { text-decoration: none; color: #000; }
+}
 
 /* Change log */
 .change-day { display: grid; gap: 8px; }

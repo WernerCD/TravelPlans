@@ -39,8 +39,8 @@
         "travel": 4,
         "variety": 4
       },
-      "leadDays": 70,
-      "leadWhy": "Schengen visa for the Nigerian passport at the German Consulate General in Lagos: appointment wait (at least 3 weeks, often longer) plus 15 days processing, up to 45",
+      "leadDays": 90,
+      "leadWhy": "Schengen visa for the Nigerian passport: join the German consulate's appointment waiting list (date order), then up to 15 days processing",
       "events": [
         {
           "from": "2027-02-04",
@@ -61,9 +61,10 @@
         },
         "ng": {
           "kind": "consulate",
-          "days": 70,
-          "need": "Schengen visa at the German Consulate General in Lagos: EUR 90 plus service fee; appointment wait of 3 weeks or more, then 15 days processing (up to 45).",
-          "link": "https://nigeria.diplo.de/ng-en/service/visastart"
+          "days": 90,
+          "need": "Schengen visa at the German Consulate General in Lagos: EUR 90; appointments only through an online waiting list in date order, then up to 15 days processing. A Jan/Feb 2027 trip is doubtful.",
+          "link": "https://nigeria.diplo.de/ng-en/service/visastart",
+          "pack": "schengen-de"
         }
       }
     },
@@ -125,7 +126,8 @@
           "kind": "online",
           "days": 3,
           "need": "No visa. Same online form, plus a yellow fever certificate for arrivals from Nigeria.",
-          "link": "https://www.travelform.gov.bb/"
+          "link": "https://www.travelform.gov.bb/",
+          "pack": "easy"
         }
       }
     },
@@ -193,7 +195,8 @@
           "kind": "consulate",
           "days": 30,
           "need": "Japan visa at VFS Lagos or Abuja: JPY 15,000 single entry plus VFS fee; at least 12 to 14 working days.",
-          "link": "https://www.ng.emb-japan.go.jp/itprtop_en/index.html"
+          "link": "https://www.ng.emb-japan.go.jp/itprtop_en/index.html",
+          "pack": "japan"
         }
       }
     },
@@ -233,8 +236,8 @@
         "travel": 2,
         "variety": 5
       },
-      "leadDays": 35,
-      "leadWhy": "Thai e-visa for the Nigerian passport: the embassy in Abuja quotes 15 business days, sometimes 4 to 6 weeks",
+      "leadDays": 42,
+      "leadWhy": "Thai e-visa for the Nigerian passport: NDLEA and police clearances first, then about 15 business days",
       "events": [
         {
           "from": "2027-02-05",
@@ -253,9 +256,10 @@
         },
         "ng": {
           "kind": "online",
-          "days": 35,
-          "need": "Thai e-visa, about 1,000 THB; the embassy in Abuja quotes 15 business days, sometimes 4 to 6 weeks.",
-          "link": "https://www.thaievisa.go.th/"
+          "days": 42,
+          "need": "Thai e-visa (about 1,000 THB). Nigerian applicants first need an NDLEA visa clearance and a POSSAP police clearance; then usually 15 business days, sometimes 4 to 6 weeks.",
+          "link": "https://www.thaievisa.go.th/",
+          "pack": "thailand"
         }
       }
     },
@@ -317,7 +321,8 @@
           "kind": "online",
           "days": 10,
           "need": "Same e-visa and fee as the US passport.",
-          "link": "https://evisa.gov.vn/"
+          "link": "https://evisa.gov.vn/",
+          "pack": "easy"
         }
       }
     },
@@ -382,7 +387,8 @@
           "kind": "none",
           "days": 0,
           "need": "No eTA since July 2025. Check whether the new insurance rule applies before flying.",
-          "link": "https://www.etakenya.go.ke/"
+          "link": "https://www.etakenya.go.ke/",
+          "pack": "easy"
         }
       }
     },
@@ -439,7 +445,8 @@
           "kind": "consulate",
           "days": 45,
           "need": "Not eligible for the online ETA: a sponsor in Sri Lanka applies in person at the Department of Immigration, with a police clearance.",
-          "link": "https://www.eta.gov.lk/slvisa/"
+          "link": "https://www.eta.gov.lk/slvisa/",
+          "pack": "srilanka"
         }
       }
     },
@@ -494,7 +501,8 @@
         "ng": {
           "kind": "none",
           "days": 0,
-          "need": "No visa (ECOWAS): 90 days. Yellow fever certificate."
+          "need": "No visa (ECOWAS): 90 days. Yellow fever certificate.",
+          "pack": "easy"
         }
       }
     },
@@ -558,7 +566,8 @@
           "kind": "online",
           "days": 10,
           "need": "Visa-free (ECOWAS), same EASE registration and airport tax at least 5 days before arrival.",
-          "link": "https://www.ease.gov.cv/"
+          "link": "https://www.ease.gov.cv/",
+          "pack": "easy"
         }
       }
     },
@@ -628,7 +637,8 @@
           "kind": "online",
           "days": 21,
           "need": "Malaysia eVisa, 30 days; fee and processing time not officially published, so start three weeks ahead.",
-          "link": "https://malaysiavisa.imi.gov.my/evisa/evisa.jsp"
+          "link": "https://malaysiavisa.imi.gov.my/evisa/evisa.jsp",
+          "pack": "malaysia"
         }
       }
     },
@@ -700,7 +710,8 @@
           "kind": "online",
           "days": 21,
           "need": "Tanzania e-visa (ordinary processing since 25 Sep 2026; fee about $50, unconfirmed), plus $44 compulsory insurance.",
-          "link": "https://visa.immigration.go.tz/"
+          "link": "https://visa.immigration.go.tz/",
+          "pack": "tanzania"
         }
       }
     },
@@ -770,7 +781,8 @@
         "ng": {
           "kind": "consulate",
           "days": 45,
-          "need": "Embassy visa from the Egyptian embassy in Abuja or consulate in Lagos; no visa on arrival and no e-visa for Nigerians."
+          "need": "Embassy visa from the Egyptian embassy in Abuja or consulate in Lagos; no visa on arrival and no e-visa for Nigerians.",
+          "pack": "egypt"
         }
       }
     },
@@ -834,7 +846,8 @@
           "kind": "consulate",
           "days": 90,
           "need": "Schengen visa for the Italian consulate in Lagos, booked through TLScontact; long appointment waits reported, then 15 days processing (up to 45).",
-          "link": "https://conslagos.esteri.it/en/"
+          "link": "https://conslagos.esteri.it/en/",
+          "pack": "schengen-it"
         }
       }
     }

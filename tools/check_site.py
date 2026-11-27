@@ -6,6 +6,7 @@ Checks every site/*.html page: <html lang>, one <h1>, a <title>, the header bar,
 non-404 pages also need a description, og:title, theme-color and the update notice; every local src/href exists.
 Every cost figure copied into the pages, the chart alt text and make_gif.py must match site/data/<trip>.json.
 Each destination needs entry.us/entry.ng rules (paperwork.html) that the planner leadDays covers.
+Visa-pack checklists must be complete and sourced; every file the offline service worker precaches must exist.
 Exit code 1 on any failure.
 """
 import re, sys
@@ -32,6 +33,7 @@ def check_page(f):
         if not (SITE / rel).exists(): errors.append(f"{name}: links missing file {ref}")
 
 import json
+pack_refs = []
 for j in SITE.rglob("*.json"):
     try:
         doc = json.loads(j.read_text(encoding="utf-8"))
@@ -47,6 +49,7 @@ for j in SITE.rglob("*.json"):
                 elif e["days"] > d.get("leadDays", 0): errors.append(f"{j.name}: {d['id']} leadDays {d.get('leadDays')} is shorter than entry.{p}.days {e['days']}")
                 if e.get("kind") in ("online", "consulate") and not e.get("days"): errors.append(f"{j.name}: {d['id']} entry.{p} is {e['kind']} but starts 0 days ahead")
                 if not e.get("need"): errors.append(f"{j.name}: {d['id']} entry.{p} has no need text")
+                if e.get("pack"): pack_refs.append((d["id"], p, e["pack"]))
     except Exception as e: errors.append(f"{j.relative_to(SITE)}: bad JSON ({e})")
 
 # --- Numbers: the trip JSON is the one source of truth; every hand-copied figure must match it ---------
@@ -129,9 +132,39 @@ def check_numbers(trip_json):
 
 numbers_checked = 0
 for j in SITE.glob("data/*.json"):
+    if '"destinations"' not in j.read_text(encoding="utf-8"): continue  # only trip files carry cost figures
     try: numbers_checked += check_numbers(j)
     except Exception as e: errors.append(f"{j.name}: number check crashed ({e})")
 if numbers_checked < 20: errors.append(f"number check found only {numbers_checked} figures; a page layout probably changed")
+
+# --- Visa pack: every checklist complete and sourced; every entry.<passport>.pack points at one -------------
+vp = SITE / "data" / "visa-pack.json"
+if vp.exists():
+    packs = json.loads(vp.read_text(encoding="utf-8")).get("packs", [])
+    ids = [p.get("id") for p in packs]
+    if len(set(ids)) != len(ids): errors.append("visa-pack.json: duplicate pack id")
+    for pk in packs:
+        for k in ("id", "title", "steps", "sources"):
+            if not pk.get(k): errors.append(f"visa-pack.json: {pk.get('id', '?')} has no {k}")
+        if len(pk.get("steps", [])) < 3: errors.append(f"visa-pack.json: {pk.get('id')} has fewer than 3 steps")
+        for s in pk.get("sources", []):
+            if not str(s.get("url", "")).startswith("https://"): errors.append(f"visa-pack.json: {pk.get('id')} source without an https link")
+    for did, p, ref in pack_refs:
+        if ref not in ids: errors.append(f"winter-2027.json: {did} entry.{p}.pack '{ref}' is not in visa-pack.json")
+else:
+    errors.append("data/visa-pack.json: missing")
+
+# --- Offline: every file sw.js precaches must exist, and every page must link the manifest ------------------
+sw = (SITE / "sw.js").read_text(encoding="utf-8") if (SITE / "sw.js").exists() else ""
+pre = re.search(r"PRECACHE = \[(.*?)\]", sw, re.S)
+if not pre: errors.append("sw.js: no PRECACHE list")
+else:
+    for f in re.findall(r"'([^']+)'", pre.group(1)):
+        if f != "./" and not (SITE / f).exists(): errors.append(f"sw.js: precaches missing file {f}")
+    for f in SITE.glob("*.html"):
+        if f.name not in pre.group(1): errors.append(f"sw.js: {f.name} is not precached, so it won't open offline")
+for f in SITE.glob("*.html"):
+    if 'rel="manifest"' not in f.read_text(encoding="utf-8"): errors.append(f"{f.name}: no manifest link")
 
 pages = sorted(SITE.glob("*.html"))
 for need in ("index.html", "changes.html", "404.html"):
