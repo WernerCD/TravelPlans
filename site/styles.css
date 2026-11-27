@@ -3,6 +3,7 @@
 :root {
   --bg: #f6f7f9; --panel: #ffffff; --fg: #1b2330; --muted: #5b6676; --line: #dde2ea; --accent: #0f7f86;
   --de: #3b4a63; --bb: #0f7f86; --jp: #b5363a; --th: #7e57c2; --ke: #407832; --lk: #a15c1d; --vn: #a8326e;
+  --sn: #9a6a00; --cv: #1d5fa8; --my: #5c6b00;
   --good: #1f7a43; --warn: #a86a00; --bad: #b3261e;
   --chip-good: #e3f3e9; --chip-warn: #fbf0d9; --chip-bad: #fbe4e2;
   --display: "Fraunces", Georgia, serif;
@@ -12,11 +13,13 @@
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #12161d; --panel: #1a2029; --fg: #e6eaf0; --muted: #9aa5b5; --line: #2c3441; --accent: #4cc3c9;
   --de: #9fb2d4; --bb: #4cc3c9; --jp: #f07a7d; --th: #b39ddb; --ke: #8bc77a; --lk: #e0a060; --vn: #e07fb0;
+  --sn: #e8c15a; --cv: #7fb2ef; --my: #c5d36b;
   --good: #6fcf97; --warn: #f2c14e; --bad: #f28b82;
   --chip-good: #1d3527; --chip-warn: #3a3018; --chip-bad: #3d2120; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --bg: #12161d; --panel: #1a2029; --fg: #e6eaf0; --muted: #9aa5b5; --line: #2c3441; --accent: #4cc3c9;
   --de: #9fb2d4; --bb: #4cc3c9; --jp: #f07a7d; --th: #b39ddb; --ke: #8bc77a; --lk: #e0a060; --vn: #e07fb0;
+  --sn: #e8c15a; --cv: #7fb2ef; --my: #c5d36b;
   --good: #6fcf97; --warn: #f2c14e; --bad: #f28b82;
   --chip-good: #1d3527; --chip-warn: #3a3018; --chip-bad: #3d2120; color-scheme: dark; }
 
@@ -64,6 +67,7 @@ thead th { font-family: var(--display); font-size: 1.05rem; }
 tbody th { font-weight: 600; color: var(--muted); width: 170px; font-size: .85rem; }
 .c-de { color: var(--de); } .c-bb { color: var(--bb); } .c-jp { color: var(--jp); }
 .c-th { color: var(--th); } .c-ke { color: var(--ke); } .c-lk { color: var(--lk); } .c-vn { color: var(--vn); }
+.c-sn { color: var(--sn); } .c-cv { color: var(--cv); } .c-my { color: var(--my); }
 .chip { display: inline-block; font-size: .75rem; font-weight: 600; padding: 1px 8px; border-radius: 99px; margin-right: 4px; white-space: nowrap; }
 .g { background: var(--chip-good); color: var(--good); } .w { background: var(--chip-warn); color: var(--warn); } .b { background: var(--chip-bad); color: var(--bad); }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }

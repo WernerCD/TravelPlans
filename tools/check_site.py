@@ -44,7 +44,8 @@ for j in SITE.rglob("*.json"):
 # flight lines in each route section, the chart alt text on every page, and the DATA rows in make_gif.py.
 NIGHTS, TOL = 14, 50          # the pages quote 14-night, mid-range totals; copies may round to the nearest $50
 CLASS_ID = {"c-de": "germany", "c-bb": "barbados", "c-jp": "japan", "c-th": "thailand",
-            "c-vn": "vietnam", "c-ke": "kenya", "c-lk": "srilanka"}
+            "c-vn": "vietnam", "c-ke": "kenya", "c-lk": "srilanka",
+            "c-sn": "senegal", "c-cv": "capeverde", "c-my": "malaysia"}
 RANGE = r"\$([\d,]+) to \$([\d,]+)"
 
 def num(s): return int(s.replace(",", ""))

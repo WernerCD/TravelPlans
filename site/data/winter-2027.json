@@ -76,6 +76,38 @@
       "leadDays": 7, "leadWhy": "Online ETA for both; confirm the Nigerian rule first",
       "events": [],
       "flags": ["Nigerian entry rule unconfirmed"]
+    },
+    {
+      "id": "senegal", "name": "Senegal", "more": "winter-2027.html#senegal", "color": "#9a6a00",
+      "flightUS": [1100, 1600], "flightNG": [800, 1300], "hotel": [80, 150], "daily": [70, 130],
+      "extras": [300, 600], "package": null, "visa": [0, 0],
+      "scores": { "weather": 4, "visa": 5, "travel": 4, "variety": 3 },
+      "leadDays": 3, "leadWhy": "No visa for either passport (ECOWAS for the Nigerian one); just six months on each passport and an onward ticket",
+      "events": [],
+      "flags": ["Harmattan dust can haze the sky in January and February"]
+    },
+    {
+      "id": "capeverde", "name": "Cape Verde", "more": "winter-2027.html#capeverde", "color": "#1d5fa8",
+      "flightUS": [900, 1400], "flightNG": [900, 1500], "hotel": [100, 180], "daily": [80, 140],
+      "extras": [300, 600], "package": null, "visa": [90, 90],
+      "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 3 },
+      "leadDays": 14, "leadWhy": "EASE pre-registration and airport tax for both, closing 5 days before arrival; recheck the Nigerian rule after the November 2026 visa changes",
+      "events": [
+        { "from": "2027-02-07", "to": "2027-02-09", "kind": "good", "text": "Mindelo Carnival, Sao Vicente (main parade Tuesday 9 Feb)" }
+      ],
+      "flags": ["Nigerian route goes through Dakar: a connection in Lisbon needs a Schengen transit visa", "Nigerian entry rule changed in November 2026; verify"]
+    },
+    {
+      "id": "malaysia", "name": "Malaysia", "more": "winter-2027.html#malaysia", "color": "#5c6b00",
+      "flightUS": [950, 1600], "flightNG": [1000, 1500], "hotel": [50, 110], "daily": [70, 130],
+      "extras": [250, 500], "package": null, "visa": [30, 50],
+      "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 5 },
+      "leadDays": 21, "leadWhy": "Malaysia eVisa for the Nigerian passport: a few working days, but sources disagree, so start three weeks ahead",
+      "events": [
+        { "from": "2027-01-22", "to": "2027-01-22", "kind": "good", "text": "Thaipusam at Batu Caves, Kuala Lumpur (22 Jan 2027)" },
+        { "from": "2027-02-05", "to": "2027-02-08", "kind": "warn", "text": "Chinese New Year: Penang and KL festive, but busy and pricier" }
+      ],
+      "flags": ["East-coast islands (Perhentian, Tioman) are closed by the monsoon until about March"]
     }
   ]
 }

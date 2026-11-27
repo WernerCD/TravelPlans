@@ -1,4 +1,4 @@
-﻿"""Animated GIF: rough 14-night cost for 2 people, six destinations, with visa status per passport.
+"""Animated GIF: rough 14-night cost for 2 people, ten destinations, with visa status per passport.
 Run: python tools/make_gif.py  -> site/winter-trip-costs.gif and site/og.png."""
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -10,9 +10,12 @@ OK, WARN, BAD = (31, 122, 67), (196, 124, 0), (179, 38, 30)
 
 # name, low, high, colour, US status, NG status, note
 DATA = [
+    ("Malaysia", 3900, 7000, (92, 107, 0), OK, WARN, "NG eVisa; west coast dry"),
     ("Sri Lanka", 4000, 6900, (161, 92, 29), WARN, WARN, "ETA both; NG rule unconfirmed"),
     ("Thailand", 4300, 7100, (126, 87, 194), OK, WARN, "NG e-visa ~1 week"),
     ("Vietnam", 4000, 7500, (168, 50, 110), WARN, WARN, "same e-visa both; avoid Tet ~6 Feb"),
+    ("Senegal", 4300, 7400, (154, 106, 0), OK, OK, "no visa for either"),
+    ("Cape Verde", 4700, 8100, (29, 95, 168), WARN, WARN, "EASE tax both; NG flies via Dakar"),
     ("Germany", 5600, 7700, (59, 74, 99), OK, BAD, "NG Schengen visa, long wait"),
     ("Japan", 6400, 9900, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),
     ("Barbados", 6750, 10700, (15, 127, 134), OK, OK, "Air Peace fare extra; few flights"),
@@ -20,7 +23,7 @@ DATA = [
 ]
 XMAX = 12000
 L, R, TOP, ROW = 170, 70, 150, 64
-H = TOP + ROW * len(DATA) + 86  # 684 for seven rows
+H = TOP + ROW * len(DATA) + 86  # 876 for ten rows
 
 
 def font(name, size):
