@@ -166,6 +166,23 @@ else:
 for f in SITE.glob("*.html"):
     if 'rel="manifest"' not in f.read_text(encoding="utf-8"): errors.append(f"{f.name}: no manifest link")
 
+# --- Menus: every page's header nav and footer list the same links in the same order, with balanced <li> --
+def links(block):
+    return [re.sub(r"^/TravelPlans/", "", h) or "./" for h in re.findall(r'href="([^"]+)"', block)]
+navs, foots = {}, {}
+for f in SITE.glob("*.html"):
+    t = f.read_text(encoding="utf-8")
+    n = re.search(r'<nav class="hub-nav".*?</nav>', t, re.S)
+    ft = re.search(r'<ul class="foot-links">(.*?)</ul>', t, re.S)
+    if n: navs[f.name] = links(n.group(0))
+    if ft:
+        if ft.group(1).count("<li>") != ft.group(1).count("</li>"): errors.append(f"{f.name}: footer list items are not closed properly")
+        foots[f.name] = [l for l in links(ft.group(1)) if not l.startswith("https://")]
+for name, got in (("menu", navs), ("footer", foots)):
+    want = got.get("index.html")
+    for page, l in got.items():
+        if l != want: errors.append(f"{page}: {name} links {l} differ from index.html {want}")
+
 pages = sorted(SITE.glob("*.html"))
 for need in ("index.html", "changes.html", "404.html"):
     if not (SITE / need).exists(): errors.append(f"{need}: missing")
