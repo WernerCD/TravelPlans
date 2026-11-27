@@ -27,6 +27,7 @@
     <a href="./">&larr; Travel Plans</a>
     <nav class="hub-nav" aria-label="Site">
       <a href="./">Plans</a>
+      <a href="planner.html">Planner</a>
       <a href="changes.html">Changes</a>
     </nav>
   </div>
@@ -62,34 +63,10 @@
     <p class="small">The St. Louis traveller holds a <b>US passport</b>; the Port Harcourt traveller holds a <b>Nigerian passport</b>. Both meet at the destination. Costs are for one 14-night trip, both people combined, one mid-range room. If either passport is different, the visa rows change.</p>
   </section>
 
-  <section class="stack" id="pick">
-    <h2>Pick for us</h2>
-    <p class="small">Set your dates, length and hotel level, then say what matters most. The list re-ranks itself, works out the cost for two, tells you when the slower passport's paperwork has to start, and flags festivals or holidays inside your dates. Paperwork that can't finish in time, or a shutdown holiday like Tet, pulls a place down the list. Japan rises when "Lots to do" matters more than easy visas and short flights. Your settings stay in this browser.</p>
-    <p id="pickFallback" class="small">Loading the trip picker...</p>
-    <div id="picker" class="picker" data-trip="winter-2027" hidden>
-      <form id="pickForm" class="pick-form">
-        <fieldset>
-          <legend>Your trip</legend>
-          <label class="field" for="pStart">First night<input type="date" id="pStart" min="2027-01-01" max="2027-03-31"></label>
-          <label class="field" for="pNights">Nights: <output id="pNightsOut">14</output><input type="range" id="pNights" min="7" max="21" step="1"></label>
-          <label class="field" for="pTier">Hotels
-            <select id="pTier">
-              <option value="budget">Budget (about 60% of mid-range)</option>
-              <option value="mid">Mid-range</option>
-              <option value="upscale">Upscale (about 2x mid-range)</option>
-            </select></label>
-        </fieldset>
-        <fieldset id="pWeights">
-          <legend>What matters (0 = ignore, 5 = most)</legend>
-        </fieldset>
-      </form>
-      <div class="pick-actions">
-        <span class="small">Ranking for <b id="pickDates"></b></span>
-        <button type="button" class="btn" id="pReset">Reset</button>
-      </div>
-      <ol id="pickResults" class="pick-list" aria-live="polite"></ol>
-      <p class="small">Totals cover both travellers: round-trip flights from St. Louis and Port Harcourt, hotel, food and local transport, domestic legs, and visa fees. Estimates from the research below, not quotes.</p>
-    </div>
+  <section class="note" id="pick">
+    <strong>Pick for us</strong>
+    <p class="small">The interactive <a href="planner.html">Trip Planner</a> has its own page now: set your dates, nights, hotel level and what matters most, and these seven places re-rank with costs for two, the date each passport's paperwork has to start, and festivals or holidays inside your dates. You can send your settings to the other traveller as a link.</p>
+    <p><a class="btn" href="planner.html">Open the Trip Planner</a></p>
   </section>
 
   <figure class="figure">
@@ -387,7 +364,7 @@
   <section class="note" id="checklist">
     <strong>Booking checklist (whichever place wins)</strong>
     <ul class="small">
-      <li><b>Pick by mid-December.</b> The "Pick for us" list shows the latest safe start for each country's paperwork; the Nigerian passport sets the pace everywhere except Barbados and Kenya.</li>
+      <li><b>Pick by mid-December.</b> The <a href="planner.html">Trip Planner</a> shows the latest safe start for each country's paperwork; the Nigerian passport sets the pace everywhere except Barbados and Kenya.</li>
       <li><b>Passports:</b> both valid at least 6 months past the return date, with two blank pages.</li>
       <li><b>Flights:</b> book so both arrive the same day, ideally within a few hours; the earlier arrival checks in to the first hotel. Avoid connections through the US or UK for the Nigerian passport.</li>
       <li><b>Insurance</b> that covers cancellations and missed connections, important if Air Peace or a visa delay is involved.</li>
@@ -455,6 +432,7 @@
     <ul class="foot-links">
       <li><a href="./">Travel Plans</a></li>
       <li><a href="winter-2027.html" aria-current="page">Winter 2027</a></li>
+      <li><a href="planner.html">Planner</a></li>
       <li><a href="changes.html">Changes</a></li>
       <li><a href="https://github.com/WernerCD/TravelPlans" rel="noopener">Source code</a></li>
       <li><a href="https://github.com/WernerCD/TravelPlans/issues" rel="noopener">Report a problem</a></li>
@@ -463,7 +441,6 @@
   </div>
 </footer>
 <script src="theme.js?v=dev"></script>
-<script src="planner.js?v=dev"></script>
 <script src="version.js?v=dev"></script>
 </body>
 </html>

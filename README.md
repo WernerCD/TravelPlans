@@ -5,7 +5,7 @@ Trip research and comparisons, published at **https://wernercd.github.io/TravelP
 ## Features
 - A home page listing each trip being planned.
 - **Winter 2027** (`winter-2027.html`): a two-week January/February trip for one US and one Nigerian passport. Germany, Barbados and Japan compared on visas, flights, hotels, daily costs and weather; alternatives (Thailand, Kenya, Sri Lanka, Vietnam and more); Air Peace and safe connections; official links; an animated cost chart.
-- **Pick for us** (`planner.js` + `data/winter-2027.json`): set dates, nights, hotel level and weights; destinations re-rank with costs for two, the latest safe date to start visas, and events inside the dates. Settings stay in the browser (`travel.planner.<trip>`). The JSON is the one place to change a destination's numbers.
+- **Trip Planner** (`planner.html` + `planner.js` + `data/winter-2027.json`): set dates, nights, hotel level and weights; destinations re-rank with costs for two, the latest safe date to start visas, and events inside the dates. Settings stay in the browser (`travel.planner.<trip>`); Copy link puts them in a `#s=start,nights,tier,weights` link that overrides saved settings. Each destination's `more` field is the link to its full plan. The JSON is the one place to change a destination's numbers.
 - Light and dark themes (key `travel.theme`), update notice for long-open tabs, print-friendly pages.
 
 ## Data and copyright
@@ -16,6 +16,7 @@ Prices are ranges taken from airline and fare-site listings on the research date
 site/            the published site (GitHub Pages serves this folder)
   index.html     trip list
   winter-2027.html
+  planner.html
   changes.html   change log
   404.html
   styles.css, theme.js, version.js, icon.svg, og.png, winter-trip-costs.gif

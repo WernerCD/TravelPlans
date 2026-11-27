@@ -1,6 +1,7 @@
-/* TravelPlans trip picker v1: ranks destinations from data/<trip>.json by the reader's own weights,
+/* TravelPlans trip planner v2: ranks destinations from data/<trip>.json by the reader's own weights,
    and works out cost for the chosen nights, the paperwork start date, and events that fall in the dates.
-   Settings are remembered per browser under travel.planner.<trip>. */
+   Settings are remembered per browser under travel.planner.<trip>; a #s=... link carries them to someone else
+   (the link wins over saved settings). */
 (function () {
   var root = document.getElementById('picker');
   if (!root) return;
@@ -13,9 +14,24 @@
   var data = null;
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
-  function save(s) { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) { /* private mode */ } }
-  var state = Object.assign({}, DEFAULTS, load() || {});
+  function save(s) {
+    try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) { /* private mode */ }
+    // A shared link in the address bar follows the settings, so a reload never brings back stale ones
+    if (/^#s=/.test(location.hash)) try { history.replaceState(null, '', toHash(s)); } catch (e) { /* file:// */ }
+  }
+  // Link format: #s=<start>,<nights>,<tier>,<cost><weather><visa><travel><variety>  e.g. #s=2027-01-18,14,mid,33423
+  function fromHash() {
+    var m = /^#s=(\d{4}-\d{2}-\d{2}),(\d{1,2}),(budget|mid|upscale),([0-5]{5})$/.exec(location.hash);
+    if (!m) return null;
+    var n = Math.min(21, Math.max(7, +m[2])), w = {};
+    Object.keys(DEFAULTS.w).forEach(function (k, i) { w[k] = +m[4].charAt(i); });
+    return { start: m[1], nights: n, tier: m[3], w: w };
+  }
+  function toHash(s) { return '#s=' + s.start + ',' + s.nights + ',' + s.tier + ',' + Object.keys(DEFAULTS.w).map(function (k) { return s.w[k]; }).join(''); }
+  var linked = fromHash();
+  var state = Object.assign({}, DEFAULTS, linked || load() || {});
   state.w = Object.assign({}, DEFAULTS.w, state.w || {});
+  if (linked) save(state);
 
   function utc(iso) { var p = iso.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }
   function fmt(t) { return new Date(t).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }); }
@@ -57,7 +73,9 @@
       li.style.setProperty('--dest', d.color);
       var head = el('div', 'pick-head');
       head.appendChild(el('span', 'pick-rank', String(i + 1)));
-      head.appendChild(el('strong', 'pick-name', d.name));
+      var name = el('strong', 'pick-name');
+      if (d.more) { var a = el('a', null, d.name); a.href = d.more; name.appendChild(a); } else name.textContent = d.name;
+      head.appendChild(name);
       head.appendChild(el('span', 'pick-total', money(r.c[0]) + ' to ' + money(r.c[1]) + (d.flightNG ? '' : ' + Air Peace')));
       li.appendChild(head);
       var bar = el('div', 'pick-bar'); bar.setAttribute('role', 'img'); bar.setAttribute('aria-label', 'Match ' + r.score + ' out of 100');
@@ -115,7 +133,16 @@
     document.getElementById('pReset').addEventListener('click', function () {
       try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
       state = JSON.parse(JSON.stringify(DEFAULTS));
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* file:// */ }
+      document.getElementById('pShareOut').textContent = '';
       sync(); render();
+    });
+    document.getElementById('pShare').addEventListener('click', function () {
+      var url = location.href.split('#')[0] + toHash(state), out = document.getElementById('pShareOut');
+      history.replaceState(null, '', toHash(state));
+      function done(msg) { out.textContent = msg; }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(function () { done('Link copied.'); }, function () { done(url); });
+      else done(url);
     });
     f.addEventListener('submit', function (e) { e.preventDefault(); });
     sync();
@@ -126,5 +153,5 @@
   }).catch(function (err) {
     if (window.console) console.error('trip picker:', err);
     root.hidden = true; document.getElementById('pickFallback').hidden = false;
-    document.getElementById('pickFallback').textContent = 'The trip picker could not load its data. The tables below have the same numbers.'; });
+    document.getElementById('pickFallback').textContent = 'The trip planner could not load its data. The Winter 2027 page has the same numbers.'; });
 })();

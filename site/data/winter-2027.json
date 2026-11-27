@@ -4,7 +4,7 @@
   "note": "All money in USD for both travellers combined. Ranges are [low, high]. Flights are round trips. hotel and daily are per night/day; package covers packageNights of lodging and food. Scores are 1 (worst) to 5 (best) for January/February. leadDays = days before departure the slower passport's paperwork should start.",
   "destinations": [
     {
-      "id": "germany", "name": "Germany", "color": "#3b4a63",
+      "id": "germany", "name": "Germany", "more": "winter-2027.html#compare", "color": "#3b4a63",
       "flightUS": [650, 900], "flightNG": [1250, 1400], "hotel": [110, 170], "daily": [150, 200],
       "extras": [0, 0], "package": null, "visa": [100, 200],
       "scores": { "weather": 1, "visa": 1, "travel": 4, "variety": 4 },
@@ -15,7 +15,7 @@
       "flags": ["Hardest visa of the group for the Nigerian passport"]
     },
     {
-      "id": "barbados", "name": "Barbados", "color": "#0f7f86",
+      "id": "barbados", "name": "Barbados", "more": "winter-2027.html#compare", "color": "#0f7f86",
       "flightUS": [450, 900], "flightNG": null, "hotel": [250, 400], "daily": [200, 300],
       "extras": [0, 0], "package": null, "visa": [0, 0],
       "scores": { "weather": 5, "visa": 5, "travel": 3, "variety": 2 },
@@ -26,7 +26,7 @@
       "flags": ["Air Peace fare not published (not in the total)", "Air Peace flies once or twice a month; a 14-night stay may not fit"]
     },
     {
-      "id": "japan", "name": "Japan", "color": "#b5363a",
+      "id": "japan", "name": "Japan", "more": "winter-2027.html#japan", "color": "#b5363a",
       "flightUS": [1100, 1650], "flightNG": [1400, 1950], "hotel": [80, 150], "daily": [150, 200],
       "extras": [700, 1300], "package": null, "visa": [25, 100],
       "scores": { "weather": 3, "visa": 2, "travel": 1, "variety": 5 },
@@ -38,7 +38,7 @@
       "flags": []
     },
     {
-      "id": "thailand", "name": "Thailand", "color": "#7e57c2",
+      "id": "thailand", "name": "Thailand", "more": "winter-2027.html#thailand", "color": "#7e57c2",
       "flightUS": [1000, 1350], "flightNG": [1250, 1550], "hotel": [50, 120], "daily": [80, 150],
       "extras": [200, 400], "package": null, "visa": [30, 30],
       "scores": { "weather": 5, "visa": 4, "travel": 2, "variety": 5 },
@@ -49,7 +49,7 @@
       "flags": []
     },
     {
-      "id": "vietnam", "name": "Vietnam", "color": "#a8326e",
+      "id": "vietnam", "name": "Vietnam", "more": "winter-2027.html#vietnam", "color": "#a8326e",
       "flightUS": [900, 1450], "flightNG": [1100, 1950], "hotel": [40, 100], "daily": [70, 130],
       "extras": [400, 800], "package": null, "visa": [50, 50],
       "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 5 },
@@ -60,7 +60,7 @@
       "flags": []
     },
     {
-      "id": "kenya", "name": "Kenya", "color": "#407832",
+      "id": "kenya", "name": "Kenya", "more": "winter-2027.html#alternatives", "color": "#407832",
       "flightUS": [1200, 1800], "flightNG": [600, 1000], "hotel": [110, 190], "daily": [85, 160],
       "extras": [0, 0], "package": { "nights": 5, "cost": [2700, 5200], "what": "5-night safari, lodging and meals included" }, "visa": [30, 30],
       "scores": { "weather": 4, "visa": 4, "travel": 3, "variety": 4 },
@@ -69,7 +69,7 @@
       "flags": ["Safari is most of the cost"]
     },
     {
-      "id": "srilanka", "name": "Sri Lanka", "color": "#a15c1d",
+      "id": "srilanka", "name": "Sri Lanka", "more": "winter-2027.html#alternatives", "color": "#a15c1d",
       "flightUS": [1300, 1900], "flightNG": [1000, 1800], "hotel": [50, 90], "daily": [70, 130],
       "extras": [0, 0], "package": null, "visa": [50, 100],
       "scores": { "weather": 5, "visa": 3, "travel": 2, "variety": 4 },

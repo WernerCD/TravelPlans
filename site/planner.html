@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trip Planner · Travel Plans</title>
+<meta name="description" content="Pick a winter 2027 destination for a US and a Nigerian passport: set dates, nights, hotel level and what matters, and seven places re-rank with costs, visa start dates and festivals.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://wernercd.github.io/TravelPlans/planner.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trip Planner · Travel Plans">
+<meta property="og:description" content="Set your dates and priorities; seven destinations re-rank with costs for two, visa start dates and festivals.">
+<meta property="og:url" content="https://wernercd.github.io/TravelPlans/planner.html">
+<meta property="og:image" content="https://wernercd.github.io/TravelPlans/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('travel.theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="styles.css?v=dev">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap hub-bar">
+    <a href="./">&larr; Travel Plans</a>
+    <nav class="hub-nav" aria-label="Site">
+      <a href="./">Plans</a>
+      <a href="planner.html" aria-current="page">Planner</a>
+      <a href="changes.html">Changes</a>
+    </nav>
+  </div>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M28 4L3 14.5l9 3L15 27l4-8z"/></svg>
+      <div>
+        <h1>Trip Planner</h1>
+        <p class="tagline">Winter 2027 · two weeks · St. Louis + Port Harcourt</p>
+      </div>
+    </div>
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="stack" id="pick">
+    <h2>Pick for us</h2>
+    <p class="small">Set your dates, length and hotel level, then say what matters most. The list re-ranks itself, works out the cost for two, tells you when the slower passport's paperwork has to start, and flags festivals or holidays inside your dates. Paperwork that can't finish in time, or a shutdown holiday like Tet, pulls a place down the list. Your settings stay in this browser; <b>Copy link</b> gives you a link with them built in, to send to the other traveller.</p>
+    <p id="pickFallback" class="small">Loading the trip planner...</p>
+    <div id="picker" class="picker" data-trip="winter-2027" hidden>
+      <form id="pickForm" class="pick-form">
+        <fieldset>
+          <legend>Your trip</legend>
+          <label class="field" for="pStart">First night<input type="date" id="pStart" min="2027-01-01" max="2027-03-31"></label>
+          <label class="field" for="pNights">Nights: <output id="pNightsOut">14</output><input type="range" id="pNights" min="7" max="21" step="1"></label>
+          <label class="field" for="pTier">Hotels
+            <select id="pTier">
+              <option value="budget">Budget (about 60% of mid-range)</option>
+              <option value="mid">Mid-range</option>
+              <option value="upscale">Upscale (about 2x mid-range)</option>
+            </select></label>
+        </fieldset>
+        <fieldset id="pWeights">
+          <legend>What matters (0 = ignore, 5 = most)</legend>
+        </fieldset>
+      </form>
+      <div class="pick-actions">
+        <span class="small">Ranking for <b id="pickDates"></b></span>
+        <button type="button" class="btn" id="pShare">Copy link</button>
+        <button type="button" class="btn" id="pReset">Reset</button>
+        <span class="small" id="pShareOut" role="status"></span>
+      </div>
+      <ol id="pickResults" class="pick-list" aria-live="polite"></ol>
+      <p class="small">Totals cover both travellers: round-trip flights from St. Louis and Port Harcourt, hotel, food and local transport, domestic legs, and visa fees. Estimates from the <a href="winter-2027.html">Winter 2027 research</a>, not quotes. Each name links to its full plan.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="./">Travel Plans</a></li>
+      <li><a href="winter-2027.html">Winter 2027</a></li>
+      <li><a href="planner.html" aria-current="page">Planner</a></li>
+      <li><a href="changes.html">Changes</a></li>
+      <li><a href="https://github.com/WernerCD/TravelPlans" rel="noopener">Source code</a></li>
+      <li><a href="https://github.com/WernerCD/TravelPlans/issues" rel="noopener">Report a problem</a></li>
+    </ul>
+    <p>Personal trip research. Prices and entry rules are estimates from public sources and may be out of date; confirm with airlines and official government sites.</p>
+  </div>
+</footer>
+<script src="theme.js?v=dev"></script>
+<script src="planner.js?v=dev"></script>
+<script src="version.js?v=dev"></script>
+</body>
+</html>
