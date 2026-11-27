@@ -1,4 +1,4 @@
-"""Animated GIF: rough 14-night cost for 2 people, ten destinations, with visa status per passport.
+"""Animated GIF: rough 14-night cost for 2 people, thirteen destinations, with visa status per passport.
 Run: python tools/make_gif.py  -> site/winter-trip-costs.gif and site/og.png."""
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -11,19 +11,22 @@ OK, WARN, BAD = (31, 122, 67), (196, 124, 0), (179, 38, 30)
 # name, low, high, colour, US status, NG status, note
 DATA = [
     ("Malaysia", 3900, 7000, (92, 107, 0), OK, WARN, "NG eVisa; west coast dry"),
-    ("Sri Lanka", 4000, 6900, (161, 92, 29), WARN, WARN, "ETA both; NG rule unconfirmed"),
-    ("Thailand", 4300, 7100, (126, 87, 194), OK, WARN, "NG e-visa ~1 week"),
+    ("Sri Lanka", 4000, 6900, (161, 92, 29), OK, BAD, "NG needs a sponsored visa"),
+    ("Thailand", 4300, 7100, (126, 87, 194), OK, WARN, "NG e-visa ~3 weeks"),
     ("Vietnam", 4000, 7500, (168, 50, 110), WARN, WARN, "same e-visa both; avoid Tet ~6 Feb"),
     ("Senegal", 4300, 7400, (154, 106, 0), OK, OK, "no visa for either"),
     ("Cape Verde", 4700, 8100, (29, 95, 168), WARN, WARN, "EASE tax both; NG flies via Dakar"),
+    ("Egypt", 4500, 7600, (139, 94, 60), OK, BAD, "NG embassy visa; Nile cruise"),
     ("Germany", 5600, 7700, (59, 74, 99), OK, BAD, "NG Schengen visa, long wait"),
-    ("Japan", 6400, 9900, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),
+    ("Italy", 5700, 8700, (106, 27, 154), OK, BAD, "NG Schengen visa; Venice Carnival"),
+    ("Japan", 6500, 9900, (181, 54, 58), OK, WARN, "NG visa ~2-3 weeks"),
     ("Barbados", 6750, 10700, (15, 127, 134), OK, OK, "Air Peace fare extra; few flights"),
-    ("Kenya", 6300, 11200, (64, 120, 50), WARN, OK, "safari is most of the cost"),
+    ("Kenya", 6300, 11300, (64, 120, 50), WARN, OK, "safari is most of the cost"),
+    ("Tanzania", 7400, 12500, (0, 105, 92), WARN, WARN, "safari + Zanzibar; e-visa both"),
 ]
-XMAX = 12000
+XMAX = 14000
 L, R, TOP, ROW = 170, 70, 150, 64
-H = TOP + ROW * len(DATA) + 86  # 876 for ten rows
+H = TOP + ROW * len(DATA) + 86  # 1068 for thirteen rows
 
 
 def font(name, size):

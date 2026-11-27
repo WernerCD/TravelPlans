@@ -4,110 +4,661 @@
   "note": "All money in USD for both travellers combined. Ranges are [low, high]. Flights are round trips. hotel and daily are per night/day; package covers packageNights of lodging and food. Scores are 1 (worst) to 5 (best) for January/February. leadDays = days before departure the slower passport's paperwork should start.",
   "destinations": [
     {
-      "id": "germany", "name": "Germany", "more": "winter-2027.html#compare", "color": "#3b4a63",
-      "flightUS": [650, 900], "flightNG": [1250, 1400], "hotel": [110, 170], "daily": [150, 200],
-      "extras": [0, 0], "package": null, "visa": [100, 200],
-      "scores": { "weather": 1, "visa": 1, "travel": 4, "variety": 4 },
-      "leadDays": 70, "leadWhy": "Schengen visa for the Nigerian passport: appointment wait plus about 15 days processing",
-      "events": [
-        { "from": "2027-02-04", "to": "2027-02-09", "kind": "good", "text": "Carnival in Cologne, Dusseldorf and Mainz (Rose Monday 8 Feb)" }
+      "id": "germany",
+      "name": "Germany",
+      "more": "winter-2027.html#compare",
+      "color": "#3b4a63",
+      "flightUS": [
+        650,
+        900
       ],
-      "flags": ["Hardest visa of the group for the Nigerian passport"]
+      "flightNG": [
+        1250,
+        1400
+      ],
+      "hotel": [
+        110,
+        170
+      ],
+      "daily": [
+        150,
+        200
+      ],
+      "extras": [
+        0,
+        0
+      ],
+      "package": null,
+      "visa": [
+        100,
+        200
+      ],
+      "scores": {
+        "weather": 1,
+        "visa": 1,
+        "travel": 4,
+        "variety": 4
+      },
+      "leadDays": 70,
+      "leadWhy": "Schengen visa for the Nigerian passport at the German Consulate General in Lagos: appointment wait (at least 3 weeks, often longer) plus 15 days processing, up to 45",
+      "events": [
+        {
+          "from": "2027-02-04",
+          "to": "2027-02-09",
+          "kind": "good",
+          "text": "Carnival in Cologne, Dusseldorf and Mainz (Rose Monday 8 Feb)"
+        }
+      ],
+      "flags": [
+        "Hardest visa of the group for the Nigerian passport"
+      ]
     },
     {
-      "id": "barbados", "name": "Barbados", "more": "winter-2027.html#compare", "color": "#0f7f86",
-      "flightUS": [450, 900], "flightNG": null, "hotel": [250, 400], "daily": [200, 300],
-      "extras": [0, 0], "package": null, "visa": [0, 0],
-      "scores": { "weather": 5, "visa": 5, "travel": 3, "variety": 2 },
-      "leadDays": 3, "leadWhy": "Online arrival form within 72 hours of departure",
-      "events": [
-        { "from": "2027-02-13", "to": "2027-02-21", "kind": "good", "text": "Holetown Festival (mid-February, dates to confirm)" }
+      "id": "barbados",
+      "name": "Barbados",
+      "more": "winter-2027.html#compare",
+      "color": "#0f7f86",
+      "flightUS": [
+        450,
+        900
       ],
-      "flags": ["Air Peace fare not published (not in the total)", "Air Peace flies once or twice a month; a 14-night stay may not fit"]
+      "flightNG": null,
+      "hotel": [
+        250,
+        400
+      ],
+      "daily": [
+        200,
+        300
+      ],
+      "extras": [
+        0,
+        0
+      ],
+      "package": null,
+      "visa": [
+        0,
+        0
+      ],
+      "scores": {
+        "weather": 5,
+        "visa": 5,
+        "travel": 3,
+        "variety": 2
+      },
+      "leadDays": 3,
+      "leadWhy": "No visa for either passport; online immigration and customs form opens 72 hours before arrival; yellow fever card for the Nigerian traveller",
+      "events": [
+        {
+          "from": "2027-02-13",
+          "to": "2027-02-21",
+          "kind": "good",
+          "text": "Holetown Festival (mid-February, dates to confirm)"
+        }
+      ],
+      "flags": [
+        "Air Peace fare not published (not in the total)",
+        "Air Peace flies once or twice a month; a 14-night stay may not fit"
+      ]
     },
     {
-      "id": "japan", "name": "Japan", "more": "winter-2027.html#japan", "color": "#b5363a",
-      "flightUS": [1100, 1650], "flightNG": [1400, 1950], "hotel": [80, 150], "daily": [150, 200],
-      "extras": [700, 1300], "package": null, "visa": [25, 100],
-      "scores": { "weather": 3, "visa": 2, "travel": 1, "variety": 5 },
-      "leadDays": 30, "leadWhy": "Japan visa for the Nigerian passport: documents plus 12 to 14 working days at VFS",
+      "id": "japan",
+      "name": "Japan",
+      "more": "winter-2027.html#japan",
+      "color": "#b5363a",
+      "flightUS": [
+        1100,
+        1650
+      ],
+      "flightNG": [
+        1400,
+        1950
+      ],
+      "hotel": [
+        80,
+        150
+      ],
+      "daily": [
+        150,
+        200
+      ],
+      "extras": [
+        700,
+        1300
+      ],
+      "package": null,
+      "visa": [
+        100,
+        130
+      ],
+      "scores": {
+        "weather": 3,
+        "visa": 2,
+        "travel": 1,
+        "variety": 5
+      },
+      "leadDays": 30,
+      "leadWhy": "Japan visa for the Nigerian passport at VFS Lagos or Abuja: at least 12 to 14 working days; fee JPY 15,000 since July 2026",
       "events": [
-        { "from": "2027-02-04", "to": "2027-02-11", "kind": "good", "text": "Sapporo Snow Festival (4 to 11 Feb 2027)" },
-        { "from": "2027-02-04", "to": "2027-02-10", "kind": "warn", "text": "Lunar New Year week: busier and pricier in Tokyo and Kyoto" }
+        {
+          "from": "2027-02-04",
+          "to": "2027-02-11",
+          "kind": "good",
+          "text": "Sapporo Snow Festival (4 to 11 Feb 2027)"
+        },
+        {
+          "from": "2027-02-04",
+          "to": "2027-02-10",
+          "kind": "warn",
+          "text": "Lunar New Year week: busier and pricier in Tokyo and Kyoto"
+        }
       ],
       "flags": []
     },
     {
-      "id": "thailand", "name": "Thailand", "more": "winter-2027.html#thailand", "color": "#7e57c2",
-      "flightUS": [1000, 1350], "flightNG": [1250, 1550], "hotel": [50, 120], "daily": [80, 150],
-      "extras": [200, 400], "package": null, "visa": [30, 30],
-      "scores": { "weather": 5, "visa": 4, "travel": 2, "variety": 5 },
-      "leadDays": 14, "leadWhy": "Thai e-visa for the Nigerian passport: 3 to 7 business days, apply two weeks ahead",
+      "id": "thailand",
+      "name": "Thailand",
+      "more": "winter-2027.html#thailand",
+      "color": "#7e57c2",
+      "flightUS": [
+        1000,
+        1350
+      ],
+      "flightNG": [
+        1250,
+        1550
+      ],
+      "hotel": [
+        50,
+        120
+      ],
+      "daily": [
+        80,
+        150
+      ],
+      "extras": [
+        200,
+        400
+      ],
+      "package": null,
+      "visa": [
+        30,
+        30
+      ],
+      "scores": {
+        "weather": 5,
+        "visa": 4,
+        "travel": 2,
+        "variety": 5
+      },
+      "leadDays": 35,
+      "leadWhy": "Thai e-visa for the Nigerian passport: the embassy in Abuja quotes 15 business days, sometimes 4 to 6 weeks",
       "events": [
-        { "from": "2027-02-05", "to": "2027-02-08", "kind": "warn", "text": "Chinese New Year: Bangkok's Chinatown packed (fun, but book ahead)" }
+        {
+          "from": "2027-02-05",
+          "to": "2027-02-08",
+          "kind": "warn",
+          "text": "Chinese New Year: Bangkok's Chinatown packed (fun, but book ahead)"
+        }
       ],
       "flags": []
     },
     {
-      "id": "vietnam", "name": "Vietnam", "more": "winter-2027.html#vietnam", "color": "#a8326e",
-      "flightUS": [900, 1450], "flightNG": [1100, 1950], "hotel": [40, 100], "daily": [70, 130],
-      "extras": [400, 800], "package": null, "visa": [50, 50],
-      "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 5 },
-      "leadDays": 10, "leadWhy": "Vietnam e-visa for both passports: 3 to 5 working days",
+      "id": "vietnam",
+      "name": "Vietnam",
+      "more": "winter-2027.html#vietnam",
+      "color": "#a8326e",
+      "flightUS": [
+        900,
+        1450
+      ],
+      "flightNG": [
+        1100,
+        1950
+      ],
+      "hotel": [
+        40,
+        100
+      ],
+      "daily": [
+        70,
+        130
+      ],
+      "extras": [
+        400,
+        800
+      ],
+      "package": null,
+      "visa": [
+        50,
+        50
+      ],
+      "scores": {
+        "weather": 4,
+        "visa": 4,
+        "travel": 2,
+        "variety": 5
+      },
+      "leadDays": 10,
+      "leadWhy": "Vietnam e-visa for both passports: 3 to 5 working days",
       "events": [
-        { "from": "2027-02-01", "to": "2027-02-14", "kind": "bad", "text": "Tet (Lunar New Year, about 6 Feb): closures and sold-out transport" }
+        {
+          "from": "2027-02-01",
+          "to": "2027-02-14",
+          "kind": "bad",
+          "text": "Tet (Lunar New Year, about 6 Feb): closures and sold-out transport"
+        }
       ],
       "flags": []
     },
     {
-      "id": "kenya", "name": "Kenya", "more": "winter-2027.html#alternatives", "color": "#407832",
-      "flightUS": [1200, 1800], "flightNG": [600, 1000], "hotel": [110, 190], "daily": [85, 160],
-      "extras": [0, 0], "package": { "nights": 5, "cost": [2700, 5200], "what": "5-night safari, lodging and meals included" }, "visa": [30, 30],
-      "scores": { "weather": 4, "visa": 4, "travel": 3, "variety": 4 },
-      "leadDays": 7, "leadWhy": "Kenya eTA for the US passport (the Nigerian passport needs none)",
-      "events": [],
-      "flags": ["Safari is most of the cost"]
-    },
-    {
-      "id": "srilanka", "name": "Sri Lanka", "more": "winter-2027.html#alternatives", "color": "#a15c1d",
-      "flightUS": [1300, 1900], "flightNG": [1000, 1800], "hotel": [50, 90], "daily": [70, 130],
-      "extras": [0, 0], "package": null, "visa": [50, 100],
-      "scores": { "weather": 5, "visa": 3, "travel": 2, "variety": 4 },
-      "leadDays": 7, "leadWhy": "Online ETA for both; confirm the Nigerian rule first",
-      "events": [],
-      "flags": ["Nigerian entry rule unconfirmed"]
-    },
-    {
-      "id": "senegal", "name": "Senegal", "more": "winter-2027.html#senegal", "color": "#9a6a00",
-      "flightUS": [1100, 1600], "flightNG": [800, 1300], "hotel": [80, 150], "daily": [70, 130],
-      "extras": [300, 600], "package": null, "visa": [0, 0],
-      "scores": { "weather": 4, "visa": 5, "travel": 4, "variety": 3 },
-      "leadDays": 3, "leadWhy": "No visa for either passport (ECOWAS for the Nigerian one); just six months on each passport and an onward ticket",
-      "events": [],
-      "flags": ["Harmattan dust can haze the sky in January and February"]
-    },
-    {
-      "id": "capeverde", "name": "Cape Verde", "more": "winter-2027.html#capeverde", "color": "#1d5fa8",
-      "flightUS": [900, 1400], "flightNG": [900, 1500], "hotel": [100, 180], "daily": [80, 140],
-      "extras": [300, 600], "package": null, "visa": [90, 90],
-      "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 3 },
-      "leadDays": 14, "leadWhy": "EASE pre-registration and airport tax for both, closing 5 days before arrival; recheck the Nigerian rule after the November 2026 visa changes",
-      "events": [
-        { "from": "2027-02-07", "to": "2027-02-09", "kind": "good", "text": "Mindelo Carnival, Sao Vicente (main parade Tuesday 9 Feb)" }
+      "id": "kenya",
+      "name": "Kenya",
+      "more": "winter-2027.html#alternatives",
+      "color": "#407832",
+      "flightUS": [
+        1200,
+        1800
       ],
-      "flags": ["Nigerian route goes through Dakar: a connection in Lisbon needs a Schengen transit visa", "Nigerian entry rule changed in November 2026; verify"]
+      "flightNG": [
+        600,
+        1000
+      ],
+      "hotel": [
+        110,
+        190
+      ],
+      "daily": [
+        85,
+        160
+      ],
+      "extras": [
+        50,
+        100
+      ],
+      "package": {
+        "nights": 5,
+        "cost": [
+          2700,
+          5200
+        ],
+        "what": "5-night safari, lodging and meals included"
+      },
+      "visa": [
+        30,
+        30
+      ],
+      "scores": {
+        "weather": 4,
+        "visa": 4,
+        "travel": 3,
+        "variety": 4
+      },
+      "leadDays": 7,
+      "leadWhy": "Kenya eTA ($30) and compulsory travel health insurance (from Oct 2026) for the US passport; the Nigerian passport needs no eTA",
+      "events": [],
+      "flags": [
+        "Safari is most of the cost",
+        "Compulsory travel insurance since Oct 2026 (about $50 each, in the total)"
+      ]
     },
     {
-      "id": "malaysia", "name": "Malaysia", "more": "winter-2027.html#malaysia", "color": "#5c6b00",
-      "flightUS": [950, 1600], "flightNG": [1000, 1500], "hotel": [50, 110], "daily": [70, 130],
-      "extras": [250, 500], "package": null, "visa": [30, 50],
-      "scores": { "weather": 4, "visa": 4, "travel": 2, "variety": 5 },
-      "leadDays": 21, "leadWhy": "Malaysia eVisa for the Nigerian passport: a few working days, but sources disagree, so start three weeks ahead",
-      "events": [
-        { "from": "2027-01-22", "to": "2027-01-22", "kind": "good", "text": "Thaipusam at Batu Caves, Kuala Lumpur (22 Jan 2027)" },
-        { "from": "2027-02-05", "to": "2027-02-08", "kind": "warn", "text": "Chinese New Year: Penang and KL festive, but busy and pricier" }
+      "id": "srilanka",
+      "name": "Sri Lanka",
+      "more": "winter-2027.html#alternatives",
+      "color": "#a15c1d",
+      "flightUS": [
+        1300,
+        1900
       ],
-      "flags": ["East-coast islands (Perhentian, Tioman) are closed by the monsoon until about March"]
+      "flightNG": [
+        1000,
+        1800
+      ],
+      "hotel": [
+        50,
+        90
+      ],
+      "daily": [
+        70,
+        130
+      ],
+      "extras": [
+        0,
+        0
+      ],
+      "package": null,
+      "visa": [
+        50,
+        100
+      ],
+      "scores": {
+        "weather": 5,
+        "visa": 1,
+        "travel": 2,
+        "variety": 4
+      },
+      "leadDays": 45,
+      "leadWhy": "The Nigerian passport cannot use the online ETA: a sponsor in Sri Lanka must apply in person at the Department of Immigration (police clearance needed)",
+      "events": [],
+      "flags": [
+        "Nigerian traveller needs a sponsor in Sri Lanka to get a visa"
+      ]
+    },
+    {
+      "id": "senegal",
+      "name": "Senegal",
+      "more": "winter-2027.html#senegal",
+      "color": "#9a6a00",
+      "flightUS": [
+        1100,
+        1600
+      ],
+      "flightNG": [
+        800,
+        1300
+      ],
+      "hotel": [
+        80,
+        150
+      ],
+      "daily": [
+        70,
+        130
+      ],
+      "extras": [
+        300,
+        600
+      ],
+      "package": null,
+      "visa": [
+        0,
+        0
+      ],
+      "scores": {
+        "weather": 4,
+        "visa": 5,
+        "travel": 4,
+        "variety": 3
+      },
+      "leadDays": 3,
+      "leadWhy": "No visa for either passport (ECOWAS for the Nigerian one); just six months on each passport and an onward ticket",
+      "events": [],
+      "flags": [
+        "Harmattan dust can haze the sky in January and February"
+      ]
+    },
+    {
+      "id": "capeverde",
+      "name": "Cape Verde",
+      "more": "winter-2027.html#capeverde",
+      "color": "#1d5fa8",
+      "flightUS": [
+        900,
+        1400
+      ],
+      "flightNG": [
+        900,
+        1500
+      ],
+      "hotel": [
+        100,
+        180
+      ],
+      "daily": [
+        80,
+        140
+      ],
+      "extras": [
+        300,
+        600
+      ],
+      "package": null,
+      "visa": [
+        90,
+        90
+      ],
+      "scores": {
+        "weather": 4,
+        "visa": 4,
+        "travel": 2,
+        "variety": 3
+      },
+      "leadDays": 14,
+      "leadWhy": "EASE pre-registration and airport tax (4,400 escudos) for both, at least 5 days before arrival; ECOWAS keeps the Nigerian passport visa-free",
+      "events": [
+        {
+          "from": "2027-02-07",
+          "to": "2027-02-09",
+          "kind": "good",
+          "text": "Mindelo Carnival, Sao Vicente (main parade Tuesday 9 Feb)"
+        }
+      ],
+      "flags": [
+        "Nigerian route goes through Dakar: a connection in Lisbon needs a Schengen transit visa"
+      ]
+    },
+    {
+      "id": "malaysia",
+      "name": "Malaysia",
+      "more": "winter-2027.html#malaysia",
+      "color": "#5c6b00",
+      "flightUS": [
+        950,
+        1600
+      ],
+      "flightNG": [
+        1000,
+        1500
+      ],
+      "hotel": [
+        50,
+        110
+      ],
+      "daily": [
+        70,
+        130
+      ],
+      "extras": [
+        250,
+        500
+      ],
+      "package": null,
+      "visa": [
+        30,
+        50
+      ],
+      "scores": {
+        "weather": 4,
+        "visa": 4,
+        "travel": 2,
+        "variety": 5
+      },
+      "leadDays": 21,
+      "leadWhy": "Malaysia eVisa for the Nigerian passport: a few working days, but sources disagree, so start three weeks ahead",
+      "events": [
+        {
+          "from": "2027-01-22",
+          "to": "2027-01-22",
+          "kind": "good",
+          "text": "Thaipusam at Batu Caves, Kuala Lumpur (22 Jan 2027)"
+        },
+        {
+          "from": "2027-02-05",
+          "to": "2027-02-08",
+          "kind": "warn",
+          "text": "Chinese New Year: Penang and KL festive, but busy and pricier"
+        }
+      ],
+      "flags": [
+        "East-coast islands (Perhentian, Tioman) are closed by the monsoon until about March"
+      ]
+    },
+    {
+      "id": "tanzania",
+      "name": "Tanzania",
+      "more": "winter-2027.html#tanzania",
+      "color": "#00695c",
+      "flightUS": [
+        1400,
+        1800
+      ],
+      "flightNG": [
+        800,
+        1300
+      ],
+      "hotel": [
+        100,
+        180
+      ],
+      "daily": [
+        80,
+        140
+      ],
+      "extras": [
+        390,
+        540
+      ],
+      "package": {
+        "nights": 5,
+        "cost": [
+          3000,
+          5800
+        ],
+        "what": "5-night Serengeti and Ngorongoro lodge safari, park fees and meals included"
+      },
+      "visa": [
+        150,
+        200
+      ],
+      "scores": {
+        "weather": 5,
+        "visa": 3,
+        "travel": 3,
+        "variety": 5
+      },
+      "leadDays": 21,
+      "leadWhy": "Tanzania e-visa for both passports ($100 for Americans); Nigerians left the referral category on 25 Sep 2026, so ordinary processing; allow three weeks",
+      "events": [
+        {
+          "from": "2027-01-20",
+          "to": "2027-02-28",
+          "kind": "good",
+          "text": "Wildebeest calving season in the southern Serengeti (roughly late January to February)"
+        }
+      ],
+      "flags": [
+        "Safari is most of the cost",
+        "Compulsory $44-a-person insurance for all of Tanzania including Zanzibar (in the total)"
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "more": "winter-2027.html#egypt",
+      "color": "#8b5e3c",
+      "flightUS": [
+        800,
+        1300
+      ],
+      "flightNG": [
+        650,
+        950
+      ],
+      "hotel": [
+        60,
+        120
+      ],
+      "daily": [
+        70,
+        120
+      ],
+      "extras": [
+        400,
+        700
+      ],
+      "package": {
+        "nights": 4,
+        "cost": [
+          1300,
+          2100
+        ],
+        "what": "4-night Luxor to Aswan Nile cruise, meals and guided sights included"
+      },
+      "visa": [
+        60,
+        150
+      ],
+      "scores": {
+        "weather": 5,
+        "visa": 2,
+        "travel": 4,
+        "variety": 5
+      },
+      "leadDays": 45,
+      "leadWhy": "Egyptian visa for the Nigerian passport from the embassy in Abuja or consulate in Lagos: no visa on arrival and no e-visa for Nigerians",
+      "events": [
+        {
+          "from": "2027-02-22",
+          "to": "2027-02-22",
+          "kind": "good",
+          "text": "Abu Simbel sun festival: sunrise lights the inner sanctuary (22 Feb)"
+        }
+      ],
+      "flags": [
+        "Nigerian traveller needs an embassy visa"
+      ]
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "more": "winter-2027.html#italy",
+      "color": "#6a1b9a",
+      "flightUS": [
+        750,
+        1100
+      ],
+      "flightNG": [
+        1000,
+        1600
+      ],
+      "hotel": [
+        110,
+        180
+      ],
+      "daily": [
+        150,
+        200
+      ],
+      "extras": [
+        250,
+        450
+      ],
+      "package": null,
+      "visa": [
+        100,
+        200
+      ],
+      "scores": {
+        "weather": 2,
+        "visa": 1,
+        "travel": 4,
+        "variety": 5
+      },
+      "leadDays": 90,
+      "leadWhy": "Schengen visa for the Nigerian passport at TLScontact for the Italian consulate in Lagos: book the appointment early (long waits reported), then 15 days processing, up to 45",
+      "events": [
+        {
+          "from": "2027-01-23",
+          "to": "2027-02-09",
+          "kind": "good",
+          "text": "Venice Carnival (23 Jan to 9 Feb 2027)"
+        }
+      ],
+      "flags": [
+        "Hardest visa of the group, with Germany"
+      ]
     }
-  ]
+  ],
+  "visaChecked": "2026-11-27"
 }

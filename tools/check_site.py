@@ -45,7 +45,8 @@ for j in SITE.rglob("*.json"):
 NIGHTS, TOL = 14, 50          # the pages quote 14-night, mid-range totals; copies may round to the nearest $50
 CLASS_ID = {"c-de": "germany", "c-bb": "barbados", "c-jp": "japan", "c-th": "thailand",
             "c-vn": "vietnam", "c-ke": "kenya", "c-lk": "srilanka",
-            "c-sn": "senegal", "c-cv": "capeverde", "c-my": "malaysia"}
+            "c-sn": "senegal", "c-cv": "capeverde", "c-my": "malaysia",
+            "c-tz": "tanzania", "c-eg": "egypt", "c-it": "italy"}
 RANGE = r"\$([\d,]+) to \$([\d,]+)"
 
 def num(s): return int(s.replace(",", ""))
