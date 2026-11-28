@@ -117,7 +117,7 @@
       ],
       "flags": [
         "Air Peace fare not published (not in the total)",
-        "Air Peace flies once or twice a month; a 14-night stay may not fit"
+        "Air Peace: no winter dates published, no visa-free backup if cancelled"
       ],
       "entry": {
         "us": {
@@ -137,7 +137,7 @@
         }
       },
       "season": "Dry season, 25 to 30 °C",
-      "route": "STL one stop; Air Peace via Antigua, 1 to 2 flights a month"
+      "route": "STL one stop; Air Peace Lagos-Barbados nonstop, monthly at best"
     },
     {
       "id": "japan",
